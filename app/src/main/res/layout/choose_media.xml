@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="@color/red"
+        android:fontFamily="@font/acme"
+        android:padding="20dp"
+        android:text="Pilih Media"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="24sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnKamera"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:background="@drawable/roundedbutton"
+            android:backgroundTint="@android:color/holo_red_light"
+            android:drawableLeft="@drawable/ic_camera"
+            android:fontFamily="@font/acme"
+            android:paddingLeft="20dp"
+            android:text="Kamera"
+            android:textColor="@color/white"
+            android:textSize="18sp"/>
+
+        <Button
+            android:id="@+id/btnGaleri"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/roundedbutton"
+            android:backgroundTint="@android:color/holo_red_light"
+            android:drawableLeft="@drawable/ic_library"
+            android:fontFamily="@font/acme"
+            android:paddingLeft="20dp"
+            android:text="Galeri"
+            android:textColor="@color/white"
+            android:textSize="18sp"/>
+    </LinearLayout>
+
+</LinearLayout>

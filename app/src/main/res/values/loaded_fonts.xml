@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="loaded_fonts" translatable="false">
+        <item>@font/aclonica</item>
+        <item>@font/acme</item>
+        <item>@font/aguafina_script</item>
+        <item>@font/aladin</item>
+        <item>@font/arizonia</item>
+        <item>@font/boogaloo</item>
+        <item>@font/carter_one</item>
+        <item>@font/henny_penny</item>
+        <item>@font/kalam</item>
+        <item>@font/kavoon</item>
+        <item>@font/neuton_bold</item>
+        <item>@font/pattaya</item>
+        <item>@font/playball</item>
+        <item>@font/scope_one</item>
+        <item>@font/yatra_one</item>
+        <item>@font/yellowtail</item>
+    </array>
+</resources>

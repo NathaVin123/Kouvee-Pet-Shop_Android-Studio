@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/containerJenis"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginLeft="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginRight="16dp"
+    android:layout_marginBottom="8dp"
+    android:elevation="16dp"
+    app:cardCornerRadius="16dp"
+    android:orientation="vertical"
+    app:cardBackgroundColor="@color/softchoco">
+
+    <RelativeLayout
+        android:id="@+id/relativeDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+        <LinearLayout
+            android:id="@+id/layoutName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_namaJenis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/acme"
+                android:textSize="18sp"
+                tools:text="Nama Jenis Hewan"
+                android:textColor="@color/black"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/acme"
+                    android:textSize="14sp"
+                    android:textColor="@color/black"
+                    tools:text="ID Jenis                   :"/>
+
+                <TextView
+                    android:id="@+id/tv_idJenis"
+                    android:layout_width="wrap_content"
+                    android:fontFamily="@font/acme"
+                    android:textSize="14sp"
+                    android:textColor="@color/black"
+                    tools:text="-"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/acme"
+                    android:textSize="14sp"
+                    android:textColor="@color/black"
+                    tools:text="Tanggal Dibuat      :"/>
+
+                <TextView
+                    android:id="@+id/tv_createAt"
+                    android:layout_width="wrap_content"
+                    android:fontFamily="@font/acme"
+                    android:textSize="14sp"
+                    android:textColor="@color/black"
+                    tools:text="-"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/acme"
+                    android:textSize="14sp"
+                    android:textColor="@color/black"
+                    tools:text="Tanggal Diubah      :"/>
+
+                <TextView
+                    android:id="@+id/tv_updateAt"
+                    android:layout_width="wrap_content"
+                    android:fontFamily="@font/acme"
+                    android:textSize="14sp"
+                    android:textColor="@color/black"
+                    tools:text="-"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/acme"
+                    android:textSize="14sp"
+                    android:textColor="@color/black"
+                    tools:text="Tanggal Dihapus      :"/>
+
+                <TextView
+                    android:id="@+id/tv_deleteAt"
+                    android:layout_width="wrap_content"
+                    android:fontFamily="@font/acme"
+                    android:textSize="14sp"
+                    android:textColor="@color/black"
+                    tools:text="-"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/acme"
+                    android:textSize="14sp"
+                    android:textColor="@color/black"
+                    tools:text="ID Log Pegawai      :"/>
+
+                <TextView
+                    android:id="@+id/tv_updateId"
+                    android:layout_width="wrap_content"
+                    android:fontFamily="@font/acme"
+                    android:textSize="14sp"
+                    android:textColor="@color/black"
+                    tools:text="-"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnUbah"
+                    android:layout_width="100dp"
+                    android:layout_height="43dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginTop="5dp"
+                    android:backgroundTint="@color/emas"
+                    android:fontFamily="@font/acme"
+                    android:text="Update"
+                    android:textStyle="bold"
+                    android:textColor="@color/coklat1"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/btnHapus"
+                    android:layout_width="80dp"
+                    android:layout_height="43dp"
+                    android:layout_marginTop="5dp"
+                    android:backgroundTint="@color/emas"
+                    android:fontFamily="@font/acme"
+                    android:text="Delete"
+                    android:textStyle="bold"
+                    android:textColor="@color/coklat1"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

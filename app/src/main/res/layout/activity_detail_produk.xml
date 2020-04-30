@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".Activity.Produk.DetailProduk">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="#FF0000"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/roundedbutton"
+            android:padding="3dp">
+
+            <com.zolad.zoominimageview.ZoomInImageView
+                android:id="@+id/dataGambarProduk"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="3dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/roundedbutton"
+                android:scaleType="centerCrop"
+                android:scrollbarStyle="insideOverlay"
+                app:srcCompat="@drawable/noimage"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="112dp"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/dataIDProduk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/acme"
+                android:text="id_produk"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textAlignment="center"
+                tools:layout_editor_absoluteX="195dp"
+                tools:layout_editor_absoluteY="145dp"/>
+
+            <TextView
+                android:id="@+id/txtNamaProduk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/acme"
+                android:text="nama_produk"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                tools:layout_editor_absoluteX="195dp"
+                tools:layout_editor_absoluteY="229dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textHarga"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="@font/acme"
+            android:text="Harga Produk"
+            android:textColor="@color/red"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="29dp"
+            tools:layout_editor_absoluteY="295dp"/>
+
+        <TextView
+            android:id="@+id/txtHargaProduk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/acme"
+            android:text="DATA"
+            android:textColor="@color/red"
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="29dp"
+            tools:layout_editor_absoluteY="295dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textStok"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="@font/acme"
+            android:text="Stok Produk                   "
+            android:textColor="@color/red"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="29dp"
+            tools:layout_editor_absoluteY="337dp"/>
+
+        <TextView
+            android:id="@+id/txtStokProduk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/acme"
+            android:text="DATA"
+            android:textColor="@color/red"
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="29dp"
+            tools:layout_editor_absoluteY="295dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textMinStok"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="@font/acme"
+            android:text="Min Stok Produk                   "
+            android:textColor="@color/red"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="29dp"
+            tools:layout_editor_absoluteY="376dp"/>
+
+        <TextView
+            android:id="@+id/txtMinStokProduk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/acme"
+            android:text="DATA"
+            android:textColor="@color/red"
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="29dp"
+            tools:layout_editor_absoluteY="295dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textSatuan"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="@font/acme"
+            android:text="Satuan Produk           "
+            android:textColor="@color/red"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="29dp"
+            tools:layout_editor_absoluteY="415dp"/>
+
+        <TextView
+            android:id="@+id/txtSatuanProduk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/acme"
+            android:text="DATA"
+            android:textColor="@color/red"
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="29dp"
+            tools:layout_editor_absoluteY="295dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textCreate"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="@font/acme"
+            android:text="Create Tanggal            "
+            android:textColor="@color/red"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="29dp"
+            tools:layout_editor_absoluteY="459dp"/>
+
+        <TextView
+            android:id="@+id/dataDibuat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/acme"
+            android:text="DATA"
+            android:textColor="@color/red"
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="29dp"
+            tools:layout_editor_absoluteY="295dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textUpdate"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="@font/acme"
+            android:text="Update Tanggal        "
+            android:textColor="@color/red"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="29dp"
+            tools:layout_editor_absoluteY="497dp"/>
+
+        <TextView
+            android:id="@+id/dataDiedit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/acme"
+            android:text="DATA"
+            android:textColor="@color/red"
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="29dp"
+            tools:layout_editor_absoluteY="295dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textDelete"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="@font/acme"
+            android:text="Delete Tanggal             "
+            android:textColor="@color/red"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="29dp"
+            tools:layout_editor_absoluteY="540dp"/>
+
+        <TextView
+            android:id="@+id/dataDihapus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/acme"
+            android:text="DATA"
+            android:textColor="@color/red"
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="29dp"
+            tools:layout_editor_absoluteY="295dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textNIP"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="@font/acme"
+            android:text="NIP Log By             "
+            android:textColor="@color/red"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="29dp"
+            tools:layout_editor_absoluteY="580dp"/>
+
+        <TextView
+            android:id="@+id/dataNIP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/acme"
+            android:text="DATA"
+            android:textColor="@color/red"
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="29dp"
+            tools:layout_editor_absoluteY="295dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnUpdate"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_alignWithParentIfMissing="false"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/roundedbutton"
+                android:backgroundTint="@color/red"
+                android:fontFamily="sans-serif-medium"
+                android:paddingLeft="15dp"
+                android:text="Update"
+                android:textColor="@color/white"
+                android:textColorHint="@color/emas"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="293dp"
+                tools:layout_editor_absoluteY="654dp"/>
+
+            <Button
+                android:id="@+id/btnRestore"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_alignWithParentIfMissing="false"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/roundedbutton"
+                android:backgroundTint="@color/red"
+                android:fontFamily="sans-serif-medium"
+                android:paddingLeft="15dp"
+                android:text="Restore"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textColorHint="@color/emas"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="293dp"
+                tools:layout_editor_absoluteY="654dp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnSoftDelete"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_alignWithParentIfMissing="false"
+                android:background="@drawable/roundedbutton"
+                android:backgroundTint="@color/red"
+                android:fontFamily="sans-serif-medium"
+                android:paddingLeft="15dp"
+                android:text="Delete"
+                android:layout_marginLeft="50dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/emas"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="195dp"
+                tools:layout_editor_absoluteY="654dp"/>
+
+            <Button
+                android:id="@+id/btnHapusPermanen"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_alignWithParentIfMissing="false"
+                android:background="@drawable/roundedbutton"
+                android:backgroundTint="@color/red"
+                android:fontFamily="sans-serif-medium"
+                android:paddingLeft="15dp"
+                android:text="Delete"
+                android:layout_marginLeft="50dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/emas"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="195dp"
+                tools:layout_editor_absoluteY="654dp"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

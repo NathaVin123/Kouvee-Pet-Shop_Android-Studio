@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/red"
+    tools:context=".Activity.MainActivity">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtNIP"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="290dp"
+        android:fontFamily="monospace"
+        android:textColorHint="@color/white"
+        android:textSize="16sp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:hint="NIP"
+            android:inputType="text"
+            android:textColor="@android:color/background_light"
+            android:textColorHighlight="?attr/colorAccent"
+            android:textColorHint="@android:color/background_light"
+            android:textColorLink="?attr/colorAccent" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtPassword"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="370dp"
+        android:fontFamily="monospace"
+        android:textColorHint="@color/white"
+        android:textSize="16sp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textColor="@android:color/background_light"
+            android:textColorHighlight="?attr/colorAccent"
+            android:textColorHint="@android:color/background_light"
+            android:textColorLink="?attr/colorAccent" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnMasuk"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="500dp"
+        android:background="@drawable/roundedbutton"
+        android:backgroundTint="@android:color/background_light"
+        android:fontFamily="sans-serif-medium"
+        android:text="Masuk"
+        android:textColor="@color/red"
+        android:textColorHint="@android:color/background_light"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="198dp"
+        android:layout_height="134dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="90dp"
+        app:srcCompat="@drawable/logoapp1" />
+
+</RelativeLayout>
