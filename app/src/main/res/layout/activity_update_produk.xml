@@ -1,9 +1,218 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
     tools:context=".Activity.Produk.UpdateProduk">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FF0000"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/roundedbutton"
+            android:padding="3dp">
+
+            <com.zolad.zoominimageview.ZoomInImageView
+                android:id="@+id/dataGambarProduk"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="3dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/roundedbutton"
+                android:scaleType="centerCrop"
+                android:scrollbarStyle="insideOverlay"
+                app:srcCompat="@drawable/noimage"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="112dp"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="170dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textIDProduk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/acme"
+                android:text="ID Produk"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                tools:layout_editor_absoluteX="195dp"
+                tools:layout_editor_absoluteY="111dp"/>
+
+            <TextView
+                android:id="@+id/dataIDProduk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/acme"
+                android:text="DATA"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textAlignment="center"
+                tools:layout_editor_absoluteX="195dp"
+                tools:layout_editor_absoluteY="145dp" />
+
+            <Button
+                android:id="@+id/btnUpload"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="43dp"
+                android:layout_marginLeft="25dp"
+                android:background="@drawable/roundedbutton"
+                android:backgroundTint="@android:color/white"
+                android:fontFamily="sans-serif-medium"
+                android:paddingLeft="10dp"
+                android:text="Upload  "
+                android:textAlignment="center"
+                android:textColor="#FF0000"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtNamaProduk"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="30dp"
+        android:textColorHint="@color/red"
+        android:textSize="16sp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nama Produk"
+            android:textColor="@color/red"
+            android:textColorHighlight="@color/red"
+            android:textColorHint="@color/red"
+            android:textSize="16sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtHargaProduk"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="15dp"
+        android:textColorHint="@color/red"
+        android:textSize="16sp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Harga Produk"
+            android:inputType="numberDecimal"
+            android:textColor="@color/red"
+            android:textColorHighlight="@color/red"
+            android:textColorHint="@color/red"
+            android:textSize="16sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtStokProduk"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="15dp"
+        android:textColorHint="@color/red"
+        android:textSize="16sp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Stok Produk"
+            android:inputType="number"
+            android:textColor="@color/red"
+            android:textColorHighlight="@color/red"
+            android:textColorHint="@color/red"
+            android:textSize="16sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtMinStokProduk"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="15dp"
+        android:textColorHint="@color/red"
+        android:textSize="16sp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Min Stok Produk"
+            android:inputType="number"
+            android:textColor="@color/red"
+            android:textColorHighlight="@color/red"
+            android:textColorHint="@color/red"
+            android:textSize="16sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtSatuanProduk"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="15dp"
+        android:textColorHint="@color/red"
+        android:textSize="16sp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Satuan Produk"
+            android:textColor="@color/red"
+            android:textColorHighlight="@color/red"
+            android:textColorHint="@color/red"
+            android:textSize="16sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:background="@drawable/roundedbutton"
+            android:backgroundTint="@color/red"
+            android:drawableTint="#FFFFFF"
+            android:fontFamily="sans-serif-medium"
+            android:paddingLeft="15dp"
+            android:text="Simpan"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="293dp"
+            tools:layout_editor_absoluteY="654dp" />
+    </LinearLayout>
+
+</LinearLayout>
