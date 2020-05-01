@@ -20,23 +20,21 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="5dp"
+            android:layout_height="160dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:layout_marginEnd="5dp"
-            android:layout_gravity="center_vertical"
+            android:layout_marginRight="20dp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/dataIDHewan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/acme"
                 android:textStyle="bold"
                 android:textAlignment="center"
-                android:text="IdLayanan"
+                android:text="ID Hewan"
                 android:textColor="@color/white"
                 android:textSize="25sp"
                 tools:layout_editor_absoluteX="195dp"
@@ -46,7 +44,7 @@
                 android:id="@+id/txtNamaHewan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
+                android:layout_marginTop="30dp"
                 android:fontFamily="@font/acme"
                 android:textAlignment="center"
                 android:text="Nama Hewan"

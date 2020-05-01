@@ -32,8 +32,9 @@ import retrofit2.Callback;
 
 public class CreateCustomer extends AppCompatActivity {
 
-    private TextInputLayout txtNama, txtAlamat, txtTglLahir, txtTelp;
-//    private TextInputEditText pTanggalLahir;
+    private TextInputLayout txtNama, txtAlamat, txtTelp;
+//    txtTglLahir,
+    private TextInputEditText txtTglLahir;
 //    private EditText pTanggalLahir;
 //    DatePickerDialog.OnDateSetListener setListener;
 //    DatePickerDialog.OnDateSetListener date = new
@@ -55,7 +56,7 @@ public class CreateCustomer extends AppCompatActivity {
     private void setAtribut() {
         txtNama = (TextInputLayout) findViewById(R.id.txtNamaCustomer);
         txtAlamat = (TextInputLayout) findViewById(R.id.txtAlamatCustomer);
-        txtTglLahir = (TextInputLayout) findViewById(R.id.txtTanggalLahirCustomer);
+        txtTglLahir = (TextInputEditText) findViewById(R.id.txtTglLahir);
         txtTelp = (TextInputLayout) findViewById(R.id.txtTelpCustomer);
         btnSimpan = (Button) findViewById(R.id.btnSimpan);
 //        pTanggalLahir = findViewById(R.id.tanggal_lahir);
@@ -103,7 +104,7 @@ public class CreateCustomer extends AppCompatActivity {
                 updateLogIdC = db.getUser(1).getNIP();
                 namaC = txtNama.getEditText().getText().toString();
                 alamatC = txtAlamat.getEditText().getText().toString();
-                tglLahirC = txtTglLahir.getEditText().getText().toString();
+                tglLahirC = txtTglLahir.getText().toString();
                 noTelpC = txtTelp.getEditText().getText().toString();
 
                 if (namaC.isEmpty() || alamatC.isEmpty() || tglLahirC.isEmpty() || noTelpC.isEmpty())
@@ -162,7 +163,7 @@ public class CreateCustomer extends AppCompatActivity {
         String myFormat = "yyyy-MM-dd";
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
 
-        txtTglLahir.getEditText().setText(sdf.format(calendar.getTime()));
+        txtTglLahir.setText(sdf.format(calendar.getTime()));
     }
 
     @Override

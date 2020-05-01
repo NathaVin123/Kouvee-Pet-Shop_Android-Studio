@@ -81,6 +81,22 @@
         android:gravity="center"
         android:orientation="horizontal">
 
+<!--        <Button-->
+<!--            android:id="@+id/btnBatal"-->
+<!--            android:layout_width="120dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:background="@drawable/roundedbutton"-->
+<!--            android:backgroundTint="@color/red"-->
+<!--            android:drawableTint="#FFFFFF"-->
+<!--            android:fontFamily="sans-serif-medium"-->
+<!--            android:paddingLeft="15dp"-->
+<!--            android:text="Batal"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="14sp"-->
+<!--            android:textStyle="bold"-->
+<!--            tools:layout_editor_absoluteX="293dp"-->
+<!--            tools:layout_editor_absoluteY="654dp" />-->
+
         <Button
             android:id="@+id/btnSave"
             android:layout_width="120dp"

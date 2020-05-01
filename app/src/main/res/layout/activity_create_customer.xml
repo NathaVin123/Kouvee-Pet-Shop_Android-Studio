@@ -67,7 +67,7 @@
 <!--            android:hint="Tanggal Lahir" />-->
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tanggal_lahir"
+            android:id="@+id/txtTglLahir"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Tanggal Lahir Customer"

@@ -84,7 +84,7 @@ public class DetailCustomer extends AppCompatActivity {
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.actionbar);
         TextView judul = (TextView) findViewById(getResources().getIdentifier("action_bar_title", "id", getPackageName()));
-        judul.setText("Detail Layanan");
+        judul.setText("Detail Customer");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
@@ -147,7 +147,7 @@ public class DetailCustomer extends AppCompatActivity {
                         final ProgressDialog progressDialog;
                         progressDialog = new ProgressDialog(DetailCustomer.this);
                         progressDialog.setMessage("loading....");
-                        progressDialog.setTitle("Menghapus Data Layanan");
+                        progressDialog.setTitle("Menghapus Data Customer");
                         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
                         // show it
                         progressDialog.show();
@@ -156,13 +156,13 @@ public class DetailCustomer extends AppCompatActivity {
                             public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
                                 progressDialog.dismiss();
                                 if (response.code() == 200) {
-                                    Toast.makeText(getApplicationContext(), "Data Layanan Berhasil Dihapus", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(), "Data Customer Berhasil Dihapus", Toast.LENGTH_SHORT).show();
                                     Intent i = new Intent(getApplicationContext(), ListCustomer.class);
                                     i.putExtra("status", status);
                                     startActivity(i);
                                 } else {
                                     progressDialog.dismiss();
-                                    Toast.makeText(getApplicationContext(), "Data Layanan Ini Tidak Dapat Dihapus.", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(), "Data Customer Ini Tidak Dapat Dihapus.", Toast.LENGTH_SHORT).show();
                                 }
                             }
 

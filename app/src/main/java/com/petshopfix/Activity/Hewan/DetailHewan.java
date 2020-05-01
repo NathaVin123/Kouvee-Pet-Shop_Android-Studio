@@ -58,7 +58,7 @@ public class DetailHewan extends AppCompatActivity {
         dataId.setText(String.valueOf(hewan.getInt("id_hewan")));
         dataNama.setText(hewan.getString("nama_hewan"));
         dataLahir.setText(hewan.getString("tglLahir_hewan"));
-        dataJenis.setText(hewan.getString("nama_jenis"));
+        dataJenis.setText(hewan.getString("nama_ukuran"));
         dataCustomer.setText(hewan.getString("nama_customer"));
         dataDiBuat.setText(hewan.getString("createLog_at"));
         dataDiEdit.setText(hewan.getString("updateLog_at"));

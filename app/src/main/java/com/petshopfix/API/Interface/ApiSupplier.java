@@ -2,12 +2,15 @@ package com.petshopfix.API.Interface;
 
 import com.petshopfix.API.Response;
 
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.DELETE;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.Part;
 import retrofit2.http.Path;
 
 public interface ApiSupplier {
@@ -28,14 +31,14 @@ public interface ApiSupplier {
                                   @Field("stok") int stok,
                                   @Field("updateLodId") String NIP);
 
+    @Multipart
     @POST("supplier/update/{id}")
-    @FormUrlEncoded
     Call<Response> updateSupplier(@Path("id") int id_supplier,
-                                  @Field("nama_supplier") String nama_supplier,
-                                  @Field("alamat_supplier") String alamat_supplier,
-                                  @Field("noTelp_supplier") String noTelp_supplier,
-                                  @Field("stok") int stok,
-                                  @Field("updateLogId") String NIP);
+                                  @Part("nama_supplier") RequestBody nama_supplier,
+                                  @Part("alamat_supplier") RequestBody alamat_supplier,
+                                  @Part("noTelp_supplier") RequestBody noTelp_supplier,
+                                  @Part("stok") RequestBody stok,
+                                  @Part("updateLogId") RequestBody NIP);
 
     @FormUrlEncoded
     @POST("supplier/{id}")

@@ -1,6 +1,7 @@
 package com.petshopfix.API.Interface;
 
 import com.petshopfix.API.Response;
+import com.petshopfix.DAO.UkuranDAO;
 
 import okhttp3.RequestBody;
 import retrofit2.Call;
@@ -36,6 +37,13 @@ public interface ApiUkuran {
     Call<Response> updateUkuran(@Path("id") int id_ukuran,
                                 @Part("nama_ukuran") RequestBody nama_ukuran,
                                 @Part("updateLogId") RequestBody NIP);
+
+//    @Multipart
+//    @POST("ukuranHewan/update/{id}")
+//    Call<Response> updateUkuran(@Path("id") String id_ukuran,
+//                                @Part("nama_ukuran") RequestBody nama_ukuran,
+//                                @Part("updateLogId") RequestBody updateLogId);
+
     @FormUrlEncoded
     @POST("ukuranHewan/{id}")
     Call<Response> deleteUkuran(@Path("id") int id_ukuran,

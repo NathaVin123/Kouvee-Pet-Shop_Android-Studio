@@ -66,7 +66,7 @@ public class HewanAdapter extends RecyclerView.Adapter<HewanAdapter.HewanViewHol
                 Bundle hewan = new Bundle();
 
                 hewan.putInt("id_hewan", hewans.getId_hewan());
-                hewan.putString("nama_layanan", hewans.getNama_hewan());
+                hewan.putString("nama_hewan", hewans.getNama_hewan());
                 hewan.putString("tglLahir_hewan", hewans.getTglLahir_hewan());
                 hewan.putInt("id_jenis", hewans.getId_jenis());
                 hewan.putInt("id_customer", hewans.getId_customer());

@@ -3,18 +3,24 @@ package com.petshopfix.Activity.Ukuran;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.google.android.material.textfield.TextInputLayout;
 import com.petshopfix.API.ApiClient;
 import com.petshopfix.API.Interface.ApiUkuran;
 import com.petshopfix.API.Response;
+import com.petshopfix.DAO.UkuranDAO;
 import com.petshopfix.R;
 import com.petshopfix.SQLite.DatabaseHandler;
 import com.petshopfix.View.Ukuran.ListUkuran;
@@ -30,10 +36,13 @@ public class UpdateUkuran extends AppCompatActivity {
 
     private TextView txtID;
     private TextInputLayout txtNama;
-    private Button btnSave;
+    private Button btnSimpan, btnBatal;
     private DatabaseHandler db;
     private Bundle ukuran;
     private ProgressDialog progressDialog;
+
+//    private Intent intent;
+//    private String namaU, IdU, CreateU, UpdateU, updateLogIdU;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,11 +59,27 @@ public class UpdateUkuran extends AppCompatActivity {
     private void setAtribut() throws MalformedURLException {
         txtID = (TextView) findViewById(R.id.dataIDUkuran);
         txtNama = (TextInputLayout) findViewById(R.id.txtNamaUkuran);
-        btnSave = (Button) findViewById(R.id.btnSave);
+        btnSimpan = (Button) findViewById(R.id.btnSave);
         ukuran = getIntent().getExtras();
+
+//        intent = getIntent();
+//        IdU = intent.getStringExtra("id_ukuran");
+//        namaU = intent.getStringExtra("nama_ukuran");
+//        CreateU = intent.getStringExtra("createLog_at");
+//        UpdateU = intent.getStringExtra("updateLog_at");
+//        updateLogIdU = intent.getStringExtra("updateLogId");
+//        Toast.makeText(this, "Nama Ukuran : "+namaU, Toast.LENGTH_SHORT).show();
+//        txtNama.getEditText().setText(namaU);
 
         txtID.setText(String.valueOf(ukuran.getInt("id_ukuran")));
         txtNama.getEditText().setText(ukuran.getString("nama_ukuran"));
+
+//        Glide.with(this)
+//                .load(ApiClient.BASE_URL + "ukuranHewan/" + ukuran.getString("id_ukuran"))
+//                .centerCrop()
+//                .diskCacheStrategy(DiskCacheStrategy.NONE)
+//                .skipMemoryCache(true)
+//                .into()
 
         db = new DatabaseHandler(this);
         progressDialog = new ProgressDialog(UpdateUkuran.this);
@@ -66,7 +91,40 @@ public class UpdateUkuran extends AppCompatActivity {
     }
 
     private void init() {
-        btnSave.setOnClickListener(new View.OnClickListener() {
+
+//        btnBatal.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                UpdateUkuran.super.onBackPressed();
+//            }
+//        });
+
+//        btnSave.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if(TextUtils.isEmpty(txtNama.getEditText().getText().toString())){
+//                    Toast.makeText(UpdateUkuran.this, "Silahkan isikan semua data!",
+//                            Toast.LENGTH_SHORT).show();
+//                    if(TextUtils.isEmpty(txtNama.getEditText().getText().toString()))
+//                        txtNama.setError("Ukuran tidak boleh kosong!");
+//                }
+//                else
+//                {
+//                    new AlertDialog.Builder(UpdateUkuran.this)
+//                            .setTitle("Ubah Ukuran Hewan")
+//                            .setMessage("Apakah Yakin ingin Mengubah ?")
+//                            .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+//                                @Override
+//                                public void onClick(DialogInterface dialog, int which) {
+//                                    int i=1;
+//                                    UkuranDAO ukuran = new UkuranDAO(IdU, txtNama.getEditText().getText().toString(), CreateU, UpdateU, updateLogIdU);
+//                                }
+//                            })
+//                }
+//            }
+//        });
+
+        btnSimpan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int id_ukuran;
@@ -95,7 +153,6 @@ public class UpdateUkuran extends AppCompatActivity {
                     progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
                     // show it
                     progressDialog.show();
-
                     ukuran.enqueue(new Callback<Response>() {
                         @Override
                         public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {

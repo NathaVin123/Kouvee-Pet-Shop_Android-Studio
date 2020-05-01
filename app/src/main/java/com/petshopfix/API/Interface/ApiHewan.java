@@ -2,12 +2,15 @@ package com.petshopfix.API.Interface;
 
 import com.petshopfix.API.Response;
 
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.DELETE;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.Part;
 import retrofit2.http.Path;
 
 public interface ApiHewan {
@@ -29,13 +32,14 @@ public interface ApiHewan {
                                  @Field("id_customer") int id_customer,
                                  @Field("updateLogId") String NIP);
 
-//    @POST("layanan/update/{id}")
-//    @FormUrlEncoded
-//    Call<Response> updateLayanan(@Path("id") String id_layanan,
-//                                 @Field("nama_layanan") String nama_layanan,
-//                                 @Field("harga_layanan") Double harga_layanan,
-//                                 @Field("id_ukuran") int id_ukuran,
-//                                 @Field("updateLogId") String NIP);
+    @Multipart
+    @POST("hewan/update/{id}")
+    Call<Response> updateHewan(@Path("id") int id_hewan,
+                                 @Part("nama_hewan") RequestBody nama_hewan,
+                               @Part("tglLahir_hewan") RequestBody tglLahir_hewan,
+                                 @Part("id_jenis") RequestBody id_jenis,
+                                 @Part("id_customer") RequestBody id_customer,
+                                 @Part("updateLogId") RequestBody NIP);
 
     @FormUrlEncoded
     @POST("hewan/{id}")

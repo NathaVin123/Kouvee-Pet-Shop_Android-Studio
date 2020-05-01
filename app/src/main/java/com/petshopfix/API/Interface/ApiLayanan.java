@@ -2,12 +2,15 @@ package com.petshopfix.API.Interface;
 
 import com.petshopfix.API.Response;
 
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.DELETE;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.Part;
 import retrofit2.http.Path;
 
 public interface ApiLayanan {
@@ -27,13 +30,13 @@ public interface ApiLayanan {
                                  @Field("id_ukuran") int id_ukuran,
                                  @Field("updateLogId") String NIP);
 
+    @Multipart
     @POST("layanan/update/{id}")
-    @FormUrlEncoded
     Call<Response> updateLayanan(@Path("id") String id_layanan,
-                               @Field("nama_layanan") String nama_layanan,
-                               @Field("harga_layanan") Double harga_layanan,
-                               @Field("id_ukuran") int id_ukuran,
-                               @Field("updateLogId") String NIP);
+                               @Part("nama_layanan") RequestBody nama_layanan,
+                               @Part("harga_layanan") RequestBody harga_layanan,
+                               @Part("id_ukuran") RequestBody id_ukuran,
+                               @Part("updateLogId") RequestBody NIP);
 
     @FormUrlEncoded
     @POST("layanan/{id}")

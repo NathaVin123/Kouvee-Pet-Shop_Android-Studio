@@ -32,8 +32,8 @@ public interface ApiJenis {
     @Multipart
     @POST("jenisHewan/update/{id}")
     Call<Response> updateJenis(@Path("id") int id_jenis,
-                                @Part("nama_jenis") RequestBody nama_jenis,
-                                @Part("updateLogId") RequestBody NIP);
+                               @Part("nama_jenis") RequestBody nama_jenis,
+                               @Part("updateLogId") RequestBody NIP);
     @FormUrlEncoded
     @POST("jenisHewan/{id}")
     Call<Response> deleteJenis(@Path("id") int id_jenis,
