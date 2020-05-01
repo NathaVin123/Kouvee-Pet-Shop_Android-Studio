@@ -10,9 +10,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.petshopfix.Activity.Customer.MenuCustomer;
+import com.petshopfix.Activity.Hewan.MenuHewan;
 import com.petshopfix.Activity.Jenis.MenuJenis;
 import com.petshopfix.Activity.Layanan.MenuLayanan;
 import com.petshopfix.Activity.Produk.MenuProduk;
+import com.petshopfix.Activity.Supplier.MenuSupplier;
 import com.petshopfix.Activity.Ukuran.MenuUkuran;
 import com.petshopfix.R;
 import com.petshopfix.SQLite.DatabaseHandler;
@@ -92,21 +95,21 @@ public class DataMasterFragment extends Fragment {
         btnSupplier.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                startActivity(new Intent(view.getContext(), MenuSupplier.class));
             }
         });
 
         btnCustomer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                startActivity(new Intent(view.getContext(), MenuCustomer.class));
             }
         });
 
         btnHewan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                startActivity(new Intent(view.getContext(), MenuHewan.class));
             }
         });
     }

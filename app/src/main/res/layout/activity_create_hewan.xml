@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF0000"
+    tools:context=".Activity.Hewan.CreateHewan">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtNamaHewan"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="80dp"
+        android:textColorHint="@color/white"
+        android:textSize="16sp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nama Hewan"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textColorHint="@color/white"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtTanggalLahirHewan"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="140dp"
+        android:textColorHint="@color/white"
+        android:textSize="16sp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tanggal Lahir Hewan"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textColorHint="@color/white"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/textViewJenis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="210dp"
+        android:text="Jenis Hewan"
+        android:textSize="13sp"/>
+
+    <Spinner
+        android:id="@+id/dataJenis"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="235dp"
+        android:popupElevation="20dp"
+        android:spinnerMode="dropdown"/>
+
+    <TextView
+        android:id="@+id/textViewCustomer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="270dp"
+        android:layout_marginTop="210dp"
+        android:text="Customer Hewan"
+        android:textSize="13sp"/>
+
+    <!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        android:id="@+id/txtIDJenis"-->
+<!--        android:layout_width="330dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginLeft="40dp"-->
+<!--        android:layout_marginTop="200dp"-->
+<!--        android:textColorHint="@color/white"-->
+<!--        android:textSize="16sp">-->
+
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="ID Jenis Hewan"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textColorHighlight="@color/white"-->
+<!--            android:textColorHint="@color/white"/>-->
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        android:id="@+id/txtIDCustomer"-->
+<!--        android:layout_width="330dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginLeft="40dp"-->
+<!--        android:layout_marginTop="250dp"-->
+<!--        android:textColorHint="@color/white"-->
+<!--        android:textSize="16sp">-->
+
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="ID Customer"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textColorHighlight="@color/white"-->
+<!--            android:textColorHint="@color/white"/>-->
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
+
+    <!--    <com.google.android.material.textfield.TextInputLayout-->
+    <!--        android:id="@+id/txtUpdateLogBy"-->
+    <!--        android:layout_width="330dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginLeft="40dp"-->
+    <!--        android:layout_marginTop="310dp"-->
+    <!--        android:textColorHint="@color/white"-->
+    <!--        android:textSize="16sp">-->
+
+    <!--        <com.google.android.material.textfield.TextInputEditText-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:hint="Update Log By"-->
+    <!--            android:textColor="@color/white"-->
+    <!--            android:textColorHighlight="@color/white"-->
+    <!--            android:textColorHint="@color/white"/>-->
+    <!--    </com.google.android.material.textfield.TextInputLayout>-->
+
+    <Spinner
+        android:id="@+id/dataCustomer"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="235dp"
+        android:popupElevation="20dp"
+        android:spinnerMode="dropdown" />
+
+    <Button
+        android:id="@+id/btnSimpan"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="360dp"
+        android:background="@drawable/roundedbutton"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/acme"
+        android:paddingLeft="10dp"
+        android:text="SIMPAN"
+        android:textAlignment="center"
+        android:textColor="#FF0000"
+        android:textSize="15sp"
+        android:textStyle="bold"/>
+
+</RelativeLayout>

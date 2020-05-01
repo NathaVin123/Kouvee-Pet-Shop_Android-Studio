@@ -61,7 +61,7 @@ public class UpdateUkuran extends AppCompatActivity {
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.actionbar);
         TextView judul =(TextView)findViewById(getResources().getIdentifier("action_bar_title", "id", getPackageName()));
-        judul.setText("Update Ukuran Hewan");
+        judul.setText("Update Ukuran");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
