@@ -50,6 +50,7 @@ public class DetailPengadaan extends AppCompatActivity {
 
         setAtribut();
         init();
+//        init();
     }
 
     private void init() {
