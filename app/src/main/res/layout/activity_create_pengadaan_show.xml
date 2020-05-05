@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C1C1C1"
+    android:orientation="vertical"
+    tools:context=".View.Pengadaan.DaftarProdukPengadaan.CreatePengadaanShow">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/txtSearch"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/roundedbutton"
+            android:drawableLeft="@drawable/ic_search"
+            android:drawableTint="#000000"
+            android:ems="10"
+            android:hint="Cari produk"
+            android:imeOptions="actionSearch"
+            android:inputType="textPersonName"
+            android:paddingLeft="10dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/roundedbutton"
+            android:backgroundTint="@color/white"
+            android:backgroundTintMode="src_in"
+            android:pointerIcon="zoom_in"
+            android:textAlignment="center"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:textColor="@android:color/black"
+        tools:text="Produk yang Tersedia"
+        android:textAlignment="center"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white" />
+
+</LinearLayout>

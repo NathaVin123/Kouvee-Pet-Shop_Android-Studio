@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".Activity.Pengadaan.DetailPengadaan">
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal">-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="60dp"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:layout_marginLeft="30dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:background="@drawable/logos"-->
+<!--            android:backgroundTint="#040404" />-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:gravity="center"-->
+<!--            android:orientation="vertical">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="KOUVEE PET SHOP"-->
+<!--                android:textColor="#020202"-->
+<!--                android:textSize="16sp"-->
+<!--                android:textStyle="bold" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Jl. Moses Gatotkaca No. 22 Yogyakarta 55281"-->
+<!--                android:textColor="#020202"-->
+<!--                android:textSize="12sp" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="https://simbahlucu.com       Telp. (0274) 357735"-->
+<!--                android:textColor="#020202"-->
+<!--                android:textSize="12sp" />-->
+<!--        </LinearLayout>-->
+
+<!--    </LinearLayout>-->
+
+<!--    <View-->
+<!--        android:id="@+id/view"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="5dp"-->
+<!--        android:layout_margin="10dp"-->
+<!--        android:background="#000000"-->
+<!--        android:backgroundTint="#040404" />-->
+
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:backgroundTint="@color/emas"-->
+<!--        android:gravity="center_horizontal"-->
+<!--        android:text="DETAIL PEMESANAN"-->
+<!--        android:textColor="#000000"-->
+<!--        android:textSize="16sp"-->
+<!--        android:textStyle="bold" />-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_marginBottom="10dp"-->
+<!--        android:orientation="horizontal">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="250dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:orientation="vertical">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginBottom="5dp"-->
+<!--                android:text="Kepada Yth :"-->
+<!--                android:textColor="#040404"-->
+<!--                android:textSize="12sp" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/txtNamaSupplier"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="PT Simbah Lucu"-->
+<!--                android:textColor="#040404"-->
+<!--                android:textSize="12sp" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/txtAlamatSupplier"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Klaten"-->
+<!--                android:textColor="#040404"-->
+<!--                android:textSize="12sp" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/txtTelpSupplier"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="082112426284"-->
+<!--                android:textColor="#040404"-->
+<!--                android:textSize="12sp" />-->
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/txtNoPO"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginBottom="5dp"-->
+<!--                android:text="No : PO-YYYY-MM-DD-XX"-->
+<!--                android:textColor="#040404"-->
+<!--                android:textSize="12sp" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/txtTanggalPengadaan"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Tanggal : 20 Januari 2020"-->
+<!--                android:textColor="#040404"-->
+<!--                android:textSize="12sp" />-->
+
+<!--        </LinearLayout>-->
+<!--    </LinearLayout>-->
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"
+        android:paddingLeft="20dp"
+        android:text="Daftar produk yang dipesan :"
+        android:textColor="#000000"
+        android:textSize="12sp" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#000000"
+        android:stretchColumns="*">
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:background="#000000">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center_horizontal"
+                android:text="No"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="1dp"
+                android:background="@color/white"
+                android:gravity="center_horizontal"
+                android:text="Nama Produk"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="1dp"
+                android:background="@color/white"
+                android:gravity="center_horizontal"
+                android:text="Satuan"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="1dp"
+                android:background="@color/white"
+                android:gravity="center_horizontal"
+                android:text="Jumlah"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="342dp"
+        android:background="@color/white">
+
+        <TableLayout
+            android:id="@+id/tablePengadaan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#000000"></TableLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="224dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp">
+
+<!--            <Button-->
+<!--                android:id="@+id/btnCetak"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:layout_marginStart="5dp"-->
+<!--                android:layout_marginLeft="5dp"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:layout_marginEnd="5dp"-->
+<!--                android:layout_marginRight="5dp"-->
+<!--                android:layout_marginBottom="5dp"-->
+<!--                android:background="@drawable/roundedbutton"-->
+<!--                android:backgroundTint="#FC000000"-->
+<!--                android:drawableLeft="@drawable/ic_prints_foreground"-->
+<!--                android:paddingRight="10dp"-->
+<!--                android:text="Cetak Surat Pemesanan"-->
+<!--                android:textAlignment="viewEnd"-->
+<!--                android:textAllCaps="false"-->
+<!--                android:textColor="@color/white" />-->
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btnUbah"
+            android:layout_width="168dp"
+            android:layout_height="40dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/roundedbutton"
+            android:backgroundTint="#000000"
+            android:drawableLeft="@drawable/ic_edit"
+            android:drawableTint="@color/white"
+            android:paddingLeft="16dp"
+            android:paddingRight="5dp"
+            android:text="Ubah Pengadaan"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</LinearLayout>

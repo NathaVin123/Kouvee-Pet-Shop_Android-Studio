@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.petshopfix.Activity.Customer.MenuCustomer;
 import com.petshopfix.Activity.Hewan.MenuHewan;
@@ -22,6 +23,7 @@ import com.petshopfix.SQLite.DatabaseHandler;
 
 public class DataMasterFragment extends Fragment {
 
+    private TextView txtProduk, txtLayanan, txtJenis, txtUkuran, txtSupplier, txtCustomer, txtHewan;
     private ImageView btnProduk, btnLayanan, btnJenis, btnUkuran, btnSupplier, btnCustomer, btnHewan;
     private String jabatan;
     private DatabaseHandler db;
@@ -46,20 +48,35 @@ public class DataMasterFragment extends Fragment {
         btnCustomer = (ImageView) view.findViewById(R.id.btnCustomer);
         btnHewan = (ImageView) view.findViewById(R.id.btnHewan);
 
+        txtProduk = (TextView) view.findViewById(R.id.txtProduk);
+        txtLayanan = (TextView) view.findViewById(R.id.txtLayanan);
+        txtJenis = (TextView) view.findViewById(R.id.txtJenis);
+        txtUkuran = (TextView) view.findViewById(R.id.txtUkuran);
+        txtSupplier = (TextView) view.findViewById(R.id.txtSupplier);
+        txtCustomer = (TextView) view.findViewById(R.id.txtCustomer);
+        txtHewan = (TextView) view.findViewById(R.id.txtHewan);
+
         db = new DatabaseHandler(getContext());
 
         if(db.getUser(1).getJabatan().equals("Owner"))
         {
             btnHewan.setVisibility(View.INVISIBLE);
+            txtHewan.setVisibility(View.INVISIBLE);
             btnCustomer.setVisibility(View.INVISIBLE);
+            txtCustomer.setVisibility(View.INVISIBLE);
         }
         else
         {
             btnProduk.setVisibility(View.INVISIBLE);
+            txtProduk.setVisibility(View.INVISIBLE);
             btnLayanan.setVisibility(View.INVISIBLE);
+            txtLayanan.setVisibility(View.INVISIBLE);
             btnUkuran.setVisibility(View.INVISIBLE);
+            txtUkuran.setVisibility(View.INVISIBLE);
             btnJenis.setVisibility(View.INVISIBLE);
+            txtJenis.setVisibility(View.INVISIBLE);
             btnSupplier.setVisibility(View.INVISIBLE);
+            txtSupplier.setVisibility(View.INVISIBLE);
         }
     }
 

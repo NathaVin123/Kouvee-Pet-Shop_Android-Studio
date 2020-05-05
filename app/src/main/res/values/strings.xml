@@ -3,5 +3,38 @@
     <string name="open">Open</string>
     <string name="close">Close</string>
 
+    <string name="menu_home">Utama</string>
+    <string name="menu_tambah">Tambah</string>
+    <string name="menu_notifikasi">Notifikasi</string>
+
+    <string-array name="sortirPengadaan">
+        <item>Sortir</item>
+        <item>Harga Termahal</item>
+        <item>Harga Termurah</item>
+        <item>Stok Terbanyak</item>
+        <item>Stok Tersedikit</item>
+    </string-array>
+
+    //Button
+    <string name="btn_cancel">BATAL</string>
+    <string name="btn_save">SIMPAN</string>
+
+    //Hint
+    <string name="hintTV1">ID</string>
+    <string name="nama_supplier">Nama Supplier</string>
+    <string name="nomor_hp">Nomor HP</string>
+    <string name="simpan">SIMPAN</string>
+    <string name="batal">BATAL</string>
+    <string name="tambah_supplier">TAMBAH SUPPLIER</string>
+    <string name="ukuran_hewan">Ukuran Hewan</string>
+    <string name="id_ukuran_hewan">ID Ukuran Hewan</string>
+    <string name="tambah_ukuran_hewan">Tambah Ukuran Hewan</string>
+    <string name="kouvee_pet_shop">Kouvee Pet Shop</string>
+    <string name="lihat_semua">Lihat Semua</string>
+    <string name="caring_your_beloved_pet">.caring your beloved pet</string>
+    <string name="id_supplier">ID Supplier</string>
+    <string name="tambah_layanan">TAMBAH LAYANAN</string>
+    <string name="title_activity_detail_pengadaan">detailPengadaan</string>
+
     <!-- TODO: Remove or change this placeholder text -->
 </resources>

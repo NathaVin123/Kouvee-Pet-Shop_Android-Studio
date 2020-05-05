@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/red"
+    android:orientation="vertical"
+    tools:context=".Activity.Pengadaan.CreatePengadaan">
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="80dp"
+        android:text="CREATE PENGADAAN"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="26sp"
+        android:textStyle="bold" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="@android:color/holo_red_light"
+        app:cardCornerRadius="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtNomorPO"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="NOMOR PO"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/textNamaSupplier"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:text="Nama Supplier"
+                android:textColor="@color/white"
+                android:textSize="18sp"/>
+
+            <Spinner
+                android:id="@+id/dataNamaSupplier"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:backgroundTint="@color/white"
+                android:popupTheme="@style/AppTheme"
+                android:spinnerMode="dropdown"
+                android:theme="@style/Theme.MaterialComponents.Dialog"/>
+
+            <TextView
+                android:id="@+id/txtAlamatSupplier"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:text="Pringwulung"
+                android:textColor="@color/white"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/txtNoTelpSupplier"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:text="012348690589478"
+                android:textColor="@color/white"
+                android:textSize="14sp"/>
+
+            <Button
+                android:id="@+id/btnTambahPemesanan"
+                android:layout_width="200dp"
+                android:layout_height="37dp"
+                android:layout_marginLeft="90dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="@android:color/holo_red_dark"
+                android:paddingLeft="10dp"
+                android:text="Pemesanan Produk"
+                android:textAllCaps="false"
+                android:textColor="@color/emas"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

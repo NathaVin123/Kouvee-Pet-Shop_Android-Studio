@@ -25,6 +25,22 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.524"/>
 
+    <TextView
+        android:id="@+id/txtUkuran"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:text="UKURAN"
+        android:textSize="30dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.630"/>
+
     <ImageView
         android:id="@+id/btnJenis"
         android:layout_width="140dp"
@@ -40,6 +56,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.524"/>
+
+    <TextView
+        android:id="@+id/txtJenis"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:text="JENIS"
+        android:textSize="30dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.93"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.630"/>
 
     <ImageView
         android:id="@+id/btnProduk"
@@ -57,6 +89,22 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.099"/>
 
+    <TextView
+        android:id="@+id/txtProduk"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:text="LAYANAN"
+        android:textSize="30dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.93"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.275"/>
+
     <ImageView
         android:id="@+id/btnLayanan"
         android:layout_width="140dp"
@@ -72,6 +120,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.099"/>
+
+    <TextView
+        android:id="@+id/txtLayanan"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:text="PRODUK"
+        android:textSize="30dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.275"/>
 
     <ImageView
         android:id="@+id/btnCustomer"
@@ -89,6 +153,22 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.099"/>
 
+    <TextView
+        android:id="@+id/txtCustomer"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:text="CUSTOMER"
+        android:textSize="30dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.275"/>
+
     <ImageView
         android:id="@+id/btnHewan"
         android:layout_width="140dp"
@@ -105,6 +185,22 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.099"/>
 
+    <TextView
+        android:id="@+id/txtHewan"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:text="HEWAN"
+        android:textSize="30dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.93"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.275"/>
+
     <ImageView
         android:id="@+id/btnSupplier"
         android:layout_width="140dp"
@@ -120,6 +216,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.912"/>
+
+    <TextView
+        android:id="@+id/txtSupplier"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:text="SUPPLIER"
+        android:textSize="30dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.950"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

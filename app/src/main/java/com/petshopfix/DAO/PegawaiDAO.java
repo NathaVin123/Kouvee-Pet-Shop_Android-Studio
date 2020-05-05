@@ -33,6 +33,13 @@ public class PegawaiDAO {
     @SerializedName("updateLogId")
     private String  updateLogId;
 
+    public PegawaiDAO(String nip, String nama_pegawai, String jabatan)
+    {
+        this.NIP = nip;
+        this.nama_pegawai = nama_pegawai;
+        this.jabatan = jabatan;
+    }
+
     public String getNIP() {
         return NIP;
     }

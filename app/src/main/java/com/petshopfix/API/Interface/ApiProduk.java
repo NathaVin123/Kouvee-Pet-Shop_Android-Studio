@@ -18,6 +18,9 @@ public interface ApiProduk {
     @GET("produk")
     Call<Response> getAll();
 
+    @GET("produk/sortir/{berdasarkan}")
+    Call<Response> sortir(@Path("berdasarkan") String berdasarkan);
+
     @GET("produk/softDelete")
     Call<Response> getSoftDelete();
 

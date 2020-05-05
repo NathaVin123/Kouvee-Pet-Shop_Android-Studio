@@ -23,6 +23,8 @@ import com.google.android.material.navigation.NavigationView;
 import com.petshopfix.API.ApiClient;
 import com.petshopfix.Fragments.DataMasterFragment;
 import com.petshopfix.Fragments.HomeFragment;
+import com.petshopfix.Fragments.PengadaanFragment;
+import com.petshopfix.Fragments.PenjualanFragment;
 import com.petshopfix.R;
 import com.petshopfix.SQLite.DatabaseHandler;
 import com.petshopfix.SQLite.UserDefaults;
@@ -124,10 +126,12 @@ public class HomeActivity extends AppCompatActivity {
                         loadFragment(new DataMasterFragment());
                         break;
                     case R.id.pengadaan :
-                        Toast.makeText(getApplicationContext(), "Pengadaan",Toast.LENGTH_SHORT).show();
+                        loadFragment(new PengadaanFragment());
+//                        Toast.makeText(getApplicationContext(), "com/petshopfix/Activity/Pengadaan",Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.penjualan :
-                        Toast.makeText(getApplicationContext(), "Penjualan",Toast.LENGTH_SHORT).show();
+                        loadFragment(new PenjualanFragment());
+//                        Toast.makeText(getApplicationContext(), "Penjualan",Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.keluar :
                         UserDefaults user = new UserDefaults(1,"","","","isLogout");
