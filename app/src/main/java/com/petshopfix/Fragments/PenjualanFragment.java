@@ -1,21 +1,26 @@
 package com.petshopfix.Fragments;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.petshopfix.Activity.PenjualanLayanan.MenuPenjualanLayanan;
+import com.petshopfix.Activity.PenjualanProduk.MenuPenjualanProduk;
+import com.petshopfix.DAO.PegawaiDAO;
 import com.petshopfix.R;
 import com.petshopfix.SQLite.DatabaseHandler;
 
 public class PenjualanFragment extends Fragment {
 
-    private ImageView btnPenjualanProduk, btnPenjualanLayanan;
-    private String jabatan;
+    private CardView cvTransaksiProduk, cvTransaksiLayanan;
+    private PegawaiDAO CS;
     private DatabaseHandler db;
     private View view;
 
@@ -31,8 +36,8 @@ public class PenjualanFragment extends Fragment {
     }
 
     private void setAtribut() {
-        btnPenjualanProduk = (ImageView) view.findViewById(R.id.btnPenjualanProduk);
-        btnPenjualanLayanan = (ImageView) view.findViewById(R.id.btnPenjualanProduk);
+        cvTransaksiProduk = (CardView) view.findViewById(R.id.cv_TransaksiProduk);
+        cvTransaksiLayanan = (CardView) view.findViewById(R.id.cv_TransaksiLayanan);
 
         db = new DatabaseHandler(getContext());
 
@@ -48,17 +53,17 @@ public class PenjualanFragment extends Fragment {
     }
 
     private void init() {
-        btnPenjualanProduk.setOnClickListener(new View.OnClickListener() {
+        cvTransaksiProduk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                startActivity(new Intent(view.getContext(), MenuPenjualanProduk.class));
             }
         });
 
-        btnPenjualanLayanan.setOnClickListener(new View.OnClickListener() {
+        cvTransaksiLayanan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                startActivity(new Intent(view.getContext(), MenuPenjualanLayanan.class));
             }
         });
     }

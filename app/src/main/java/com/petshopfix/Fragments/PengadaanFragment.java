@@ -1,6 +1,7 @@
 package com.petshopfix.Fragments;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
@@ -16,9 +17,10 @@ import com.petshopfix.DAO.PegawaiDAO;
 import com.petshopfix.R;
 import com.petshopfix.SQLite.DatabaseHandler;
 import com.petshopfix.View.Pengadaan.DaftarPengadaan.ShowPengadaan;
+import com.petshopfix.View.Produk.ListProduk;
 
 public class PengadaanFragment extends Fragment {
-    private ImageView btnTambahPengadaan, btnTampilPengadaan;
+    private CardView cvTampilPengadaan, cvTampilJumlahPengadaan, cvTambahPengadaan;
     private PegawaiDAO Owner;
     private DatabaseHandler db;
     private View view;
@@ -35,26 +37,44 @@ public class PengadaanFragment extends Fragment {
     }
 
     private void setAtribut() {
-        btnTambahPengadaan = (ImageView) view.findViewById(R.id.btnTambahPengadaan);
-        btnTampilPengadaan = (ImageView) view.findViewById(R.id.btnTampilPengadaan);
+        cvTampilPengadaan = (CardView) view.findViewById(R.id.cv_tampilPengadaan);
+        cvTambahPengadaan = (CardView) view.findViewById(R.id.cv_tambahPengadaan);
+        cvTampilJumlahPengadaan = (CardView) view.findViewById(R.id.cv_tampilMinimalPengadaan);
+//        cvVerifikasiStatusPengadaan = (CardView) view.findViewById(R.id.cv_verifikasiStatusPengadaan);
 
         db = new DatabaseHandler(getContext());
         Owner = new PegawaiDAO(db.getUser(1).getNIP(), db.getUser(1).getNama_pegawai(), db.getUser(1).getJabatan());
     }
 
     private void init() {
-        btnTambahPengadaan.setOnClickListener(new View.OnClickListener() {
+        cvTambahPengadaan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(view.getContext(), CreatePengadaan.class));
             }
         });
 
-        btnTampilPengadaan.setOnClickListener(new View.OnClickListener() {
+        cvTampilPengadaan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(view.getContext(), ShowPengadaan.class));
             }
         });
+
+        cvTampilJumlahPengadaan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(view.getContext(), ListProduk.class);
+                i.putExtra("status", "minimal");
+                startActivity(i);
+            }
+        });
+
+//        cvVerifikasiStatusPengadaan.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(view.getContext(), tambahPengadaanShow.class));
+//            }
+//        });
     }
 }

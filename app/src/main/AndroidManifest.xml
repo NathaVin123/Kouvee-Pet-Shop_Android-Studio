@@ -10,7 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".View.PenjualanProduk.DaftarPenjualanProduk.ShowPenjualanProduk"></activity>
+        <activity android:name=".Activity.PenjualanProduk.MenuPenjualanProduk"></activity>
+        <activity android:name=".Activity.PenjualanLayanan.MenuPenjualanLayanan" />
+        <activity android:name=".View.PenjualanProduk.DaftarPenjualanProduk.ShowPenjualanProduk" />
         <activity android:name=".View.PenjualanProduk.DaftarPenjualanProduk.PenjualanProdukAdapter" />
         <activity android:name=".View.Pengadaan.DaftarPengadaan.PengadaanAdapter" />
         <activity android:name=".View.Pengadaan.DaftarPengadaan.ShowPengadaan" />
@@ -81,10 +83,10 @@
     </application>
 
     <uses-feature android:name="android.hardware.camera" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
 </manifest>
