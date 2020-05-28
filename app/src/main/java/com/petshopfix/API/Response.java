@@ -4,6 +4,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import com.petshopfix.DAO.CustomerDAO;
 import com.petshopfix.DAO.DetailPengadaanDAO;
+import com.petshopfix.DAO.DetailTransaksiProdukDAO;
 import com.petshopfix.DAO.HewanDAO;
 import com.petshopfix.DAO.JenisDAO;
 import com.petshopfix.DAO.LayananDAO;
@@ -11,6 +12,7 @@ import com.petshopfix.DAO.PegawaiDAO;
 import com.petshopfix.DAO.ProdukDAO;
 import com.petshopfix.DAO.SupplierDAO;
 import com.petshopfix.DAO.TransaksiPengadaanDAO;
+import com.petshopfix.DAO.TransaksiProdukDAO;
 import com.petshopfix.DAO.UkuranDAO;
 
 import java.util.List;
@@ -65,13 +67,13 @@ public class Response {
     @Expose
     private List<DetailPengadaanDAO> detailPengadaan;
 
-//    @SerializedName("transaksiProduk")
-//    @Expose
-//    private List<TransaksiPengadaanDAO> transaksiProduk;
-//
-//    @SerializedName("detailTransaksiProduk")
-//    @Expose
-//    private List<DetailPengadaanDAO> detailTransaksiProduk;
+    @SerializedName("transaksiProduk")
+    @Expose
+    private List<TransaksiProdukDAO> transaksiProduk;
+
+    @SerializedName("detailProduk")
+    @Expose
+    private List<DetailTransaksiProdukDAO> detailProduk;
 
 //    @SerializedName("transaksiLayanan")
 //    @Expose
@@ -128,5 +130,13 @@ public class Response {
 
     public List<DetailPengadaanDAO> getDetailPengadaan() {
         return detailPengadaan;
+    }
+
+    public List<TransaksiProdukDAO> getTransaksiProduk() {
+        return transaksiProduk;
+    }
+
+    public List<DetailTransaksiProdukDAO> getDetailProduk() {
+        return detailProduk;
     }
 }

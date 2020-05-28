@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:background="#FF0000"
+        android:background="#D72C16"
         android:orientation="horizontal"
         android:paddingTop="10dp"
         android:paddingBottom="10dp">
@@ -60,17 +60,17 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="10dp"
-        android:textColorHint="@color/red"
+        android:textColorHint="#C0B2B5"
         android:textSize="16sp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:hint="Nama Hewan"
             android:inputType="text"
-            android:textColor="@color/red"
-            android:textColorHighlight="@color/red"
-            android:textColorHint="@color/red"
+            android:textColor="#B6452C"
+            android:textColorHighlight="#B6452C"
+            android:textColorHint="#B6452C"
             android:textSize="16sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -80,17 +80,17 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="15dp"
-        android:textColorHint="@color/red"
+        android:textColorHint="#C0B2B5"
         android:textSize="16sp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:hint="Tanggal Lahir Hewan"
             android:inputType="date"
-            android:textColor="@color/red"
-            android:textColorHighlight="@color/red"
-            android:textColorHint="@color/red"
+            android:textColor="#B6452C"
+            android:textColorHighlight="#B6452C"
+            android:textColorHint="#B6452C"
             android:textSize="16sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -101,7 +101,7 @@
         android:layout_marginLeft="45dp"
         android:layout_marginTop="20dp"
         android:text="Jenis Hewan"
-        android:textColor="@color/red"
+        android:textColor="#C0B2B5"
         android:textSize="13sp"/>
 
     <Spinner
@@ -120,7 +120,7 @@
         android:layout_marginLeft="280dp"
         android:layout_marginTop="-65dp"
         android:text="Customer"
-        android:textColor="@color/red"
+        android:textColor="#C0B2B5"
         android:textSize="13sp"/>
 
     <Spinner
@@ -144,7 +144,7 @@
             android:layout_width="120dp"
             android:layout_height="40dp"
             android:background="@drawable/roundedbutton"
-            android:backgroundTint="@color/red"
+            android:backgroundTint="#D72C16"
             android:drawableTint="#FFFFFF"
             android:fontFamily="sans-serif-medium"
             android:paddingLeft="15dp"

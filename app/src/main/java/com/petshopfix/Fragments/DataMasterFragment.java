@@ -1,6 +1,7 @@
 package com.petshopfix.Fragments;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
@@ -9,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.petshopfix.Activity.Customer.MenuCustomer;
@@ -23,8 +25,8 @@ import com.petshopfix.SQLite.DatabaseHandler;
 
 public class DataMasterFragment extends Fragment {
 
-    private TextView txtProduk, txtLayanan, txtJenis, txtUkuran, txtSupplier, txtCustomer, txtHewan;
-    private ImageView btnProduk, btnLayanan, btnJenis, btnUkuran, btnSupplier, btnCustomer, btnHewan;
+    private CardView cvProduk, cvLayanan, cvJenis, cvUkuran, cvSupplier, cvCustomer, cvHewan;
+    private LinearLayout llprodukLayanan, llcustomerHewan, lljenisUkuran, llsupplier;
     private String jabatan;
     private DatabaseHandler db;
     private View view;
@@ -40,90 +42,77 @@ public class DataMasterFragment extends Fragment {
     }
 
     private void setAtribut() {
-        btnProduk = (ImageView) view.findViewById(R.id.btnProduk);
-        btnLayanan = (ImageView) view.findViewById(R.id.btnLayanan);
-        btnJenis = (ImageView) view.findViewById(R.id.btnJenis);
-        btnUkuran = (ImageView) view.findViewById(R.id.btnUkuran);
-        btnSupplier = (ImageView) view.findViewById(R.id.btnSupplier);
-        btnCustomer = (ImageView) view.findViewById(R.id.btnCustomer);
-        btnHewan = (ImageView) view.findViewById(R.id.btnHewan);
+        cvCustomer = (CardView) view.findViewById(R.id.cv_customerID);
+        cvHewan = (CardView) view.findViewById(R.id.cv_hewanID);
+        cvJenis = (CardView) view.findViewById(R.id.cv_jenishewanID);
+        cvUkuran = (CardView) view.findViewById(R.id.cv_ukuranhewanID);
+        cvSupplier = (CardView) view.findViewById(R.id.cv_supplierID);
+        cvProduk = (CardView) view.findViewById(R.id.cv_produkID);
+        cvLayanan = (CardView) view.findViewById(R.id.cv_layananID);
 
-        txtProduk = (TextView) view.findViewById(R.id.txtProduk);
-        txtLayanan = (TextView) view.findViewById(R.id.txtLayanan);
-        txtJenis = (TextView) view.findViewById(R.id.txtJenis);
-        txtUkuran = (TextView) view.findViewById(R.id.txtUkuran);
-        txtSupplier = (TextView) view.findViewById(R.id.txtSupplier);
-        txtCustomer = (TextView) view.findViewById(R.id.txtCustomer);
-        txtHewan = (TextView) view.findViewById(R.id.txtHewan);
+        llprodukLayanan = (LinearLayout) view.findViewById(R.id.linearLayoutPL);
+        llcustomerHewan = (LinearLayout) view.findViewById(R.id.linearLayoutCH);
+        lljenisUkuran = (LinearLayout) view.findViewById(R.id.linearLayoutJU);
+        llsupplier = (LinearLayout) view.findViewById(R.id.linearLayoutS);
 
         db = new DatabaseHandler(getContext());
 
         if(db.getUser(1).getJabatan().equals("Owner"))
         {
-            btnHewan.setVisibility(View.INVISIBLE);
-            txtHewan.setVisibility(View.INVISIBLE);
-            btnCustomer.setVisibility(View.INVISIBLE);
-            txtCustomer.setVisibility(View.INVISIBLE);
+            llcustomerHewan.setVisibility(View.INVISIBLE);
         }
         else
         {
-            btnProduk.setVisibility(View.INVISIBLE);
-            txtProduk.setVisibility(View.INVISIBLE);
-            btnLayanan.setVisibility(View.INVISIBLE);
-            txtLayanan.setVisibility(View.INVISIBLE);
-            btnUkuran.setVisibility(View.INVISIBLE);
-            txtUkuran.setVisibility(View.INVISIBLE);
-            btnJenis.setVisibility(View.INVISIBLE);
-            txtJenis.setVisibility(View.INVISIBLE);
-            btnSupplier.setVisibility(View.INVISIBLE);
-            txtSupplier.setVisibility(View.INVISIBLE);
+            llprodukLayanan.setVisibility(View.INVISIBLE);
+            lljenisUkuran.setVisibility(View.INVISIBLE);
+            llsupplier.setVisibility(View.INVISIBLE);
         }
     }
 
     private void init() {
-        btnProduk.setOnClickListener(new View.OnClickListener() {
+        cvProduk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(view.getContext(), MenuProduk.class));
             }
         });
 
-        btnLayanan.setOnClickListener(new View.OnClickListener() {
+        cvLayanan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(view.getContext(), MenuLayanan.class));
             }
         });
 
-        btnJenis.setOnClickListener(new View.OnClickListener() {
+        cvJenis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(view.getContext(), MenuJenis.class));
             }
         });
 
-        btnUkuran.setOnClickListener(new View.OnClickListener() {
+        cvUkuran.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(view.getContext(), MenuUkuran.class));
             }
         });
 
-        btnSupplier.setOnClickListener(new View.OnClickListener() {
+        cvSupplier.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(view.getContext(), MenuSupplier.class));
             }
         });
 
-        btnCustomer.setOnClickListener(new View.OnClickListener() {
+        cvCustomer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(view.getContext(), MenuCustomer.class));
             }
         });
 
-        btnHewan.setOnClickListener(new View.OnClickListener() {
+        cvHewan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(view.getContext(), MenuHewan.class));

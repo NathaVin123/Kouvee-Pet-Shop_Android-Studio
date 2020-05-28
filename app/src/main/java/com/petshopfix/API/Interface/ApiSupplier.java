@@ -23,13 +23,13 @@ public interface ApiSupplier {
     @GET("supplier/{cari}")
     Call<Response> getSupplier(@Path("cari") String cari);
 
+    @Multipart
     @POST("supplier")
-    @FormUrlEncoded
-    Call<Response> createSupplier(@Field("nama_suppplier") String nama_supplier,
-                                  @Field("alamat_supplier") String alamat_supplier,
-                                  @Field("noTelp_supplier") String noTelp_supplier,
-                                  @Field("stok") int stok,
-                                  @Field("updateLodId") String NIP);
+    Call<Response> createSupplier(@Part("nama_suppplier") RequestBody nama_supplier,
+                                  @Part("alamat_supplier") RequestBody alamat_supplier,
+                                  @Part("noTelp_supplier") RequestBody noTelp_supplier,
+                                  @Part("stok") RequestBody stok,
+                                  @Part("updateLodId") RequestBody updateLogId);
 
     @Multipart
     @POST("supplier/update/{id}")

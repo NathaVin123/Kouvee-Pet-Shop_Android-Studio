@@ -53,12 +53,21 @@ public class HomeActivity extends AppCompatActivity {
 
     private void cek() {
         String status = getIntent().getStringExtra("status");
-        if (status.equals("dataMaster"))
+        if(status.equals("dataMaster"))
+        {
             loadFragment(new DataMasterFragment());
+            nv.getMenu().getItem(1).setChecked(true);
+
+        }
         else if (status.equals("pengadaan"))
-            loadFragment(new DataMasterFragment());
+        {
+            loadFragment(new PengadaanFragment());
+            nv.getMenu().getItem(2).setChecked(true);
+        }
         else if (status.equals("penjualan"))
-            loadFragment(new HomeFragment());
+        {
+            loadFragment(new PenjualanFragment());
+        }
     }
 
     public void setAtribut() {
@@ -70,7 +79,7 @@ public class HomeActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
-        getSupportActionBar().setLogo(R.drawable.logoapp1);
+        getSupportActionBar().setLogo(R.drawable.logoapp3);
 
         fragmentManager = getSupportFragmentManager();
         fragmentTransaction = fragmentManager.beginTransaction();
@@ -131,7 +140,6 @@ public class HomeActivity extends AppCompatActivity {
                         break;
                     case R.id.penjualan :
                         loadFragment(new PenjualanFragment());
-//                        Toast.makeText(getApplicationContext(), "Penjualan",Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.keluar :
                         UserDefaults user = new UserDefaults(1,"","","","isLogout");

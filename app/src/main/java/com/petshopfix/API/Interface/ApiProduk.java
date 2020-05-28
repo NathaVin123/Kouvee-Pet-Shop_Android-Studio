@@ -24,6 +24,9 @@ public interface ApiProduk {
     @GET("produk/softDelete")
     Call<Response> getSoftDelete();
 
+    @GET("produk/minimal")
+    Call<Response> getMinimal();
+
     @GET("produk/cari/{cari}")
     Call<Response> getProduk(@Path("cari") String cari);
 
@@ -47,6 +50,12 @@ public interface ApiProduk {
                                  @Part("satuan_produk") RequestBody satuan_produk,
                                  @Part MultipartBody.Part gambar,
                                  @Part("updateLogId") RequestBody  updateLogId);
+
+    @FormUrlEncoded
+    @POST("produk/updateStok/{id}")
+    Call<Response> updateStok (@Path("id") String id_produk,
+                               @Field("stok") int  stok,
+                               @Field("updateLogId") String NIP);
 
     @FormUrlEncoded
     @POST("produk/{id}")

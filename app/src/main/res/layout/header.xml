@@ -10,7 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:background="@color/red"
+        android:background="#D72C16"
         android:orientation="vertical">
 
         <LinearLayout
@@ -38,7 +38,6 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/circle" />
-
             </RelativeLayout>
 
             <LinearLayout
@@ -55,7 +54,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:fontFamily="@font/acme"
-                    android:text="K002"
+                    android:text="NIP"
                     android:textColor="@android:color/background_light"
                     android:textSize="14sp"
                     android:textStyle="bold" />
@@ -66,12 +65,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:fontFamily="@font/acme"
-                    android:text="Kasir"
+                    android:text="Jabatan"
                     android:textAlignment="center"
                     android:textColor="@android:color/background_light"
                     android:textSize="18sp"
                     android:textStyle="bold" />
-
             </LinearLayout>
 
         </LinearLayout>
@@ -83,11 +81,10 @@
             android:layout_marginLeft="40dp"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/acme"
-            android:text="Lawrence Adi Noman"
+            android:text="Nama Pegawai"
             android:textColor="@android:color/background_light"
             android:textSize="18sp"
             android:textStyle="bold" />
-
     </LinearLayout>
 
     <View
@@ -95,13 +92,13 @@
         android:layout_width="match_parent"
         android:layout_height="3dp"
         android:layout_marginTop="2dp"
-        android:background="#00ADE9" />
+        android:background="#D72C16" />
 
     <View
         android:id="@+id/view2"
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:layout_marginTop="2dp"
-        android:background="#00ADE9" />
+        android:background="#D72C16" />
 
 </LinearLayout>

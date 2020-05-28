@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_margin="8dp"
         android:layout_height="wrap_content"
-        android:background="#FF0000"
+        android:background="#D72C16"
         android:padding="5dp">
 
         <RelativeLayout
@@ -68,13 +68,13 @@
                 android:id="@+id/btnDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
-                android:layout_marginLeft="140dp"
+                android:layout_marginLeft="115dp"
                 android:layout_marginTop="70dp"
                 android:background="@drawable/roundedbutton"
                 android:backgroundTint="@android:color/background_light"
                 android:fontFamily="sans-serif-medium"
                 android:text="DETAIL"
-                android:textColor="#FF0000"
+                android:textColor="#D72C16"
                 android:textColorHint="@android:color/background_light"
                 android:textSize="14sp"/>
 

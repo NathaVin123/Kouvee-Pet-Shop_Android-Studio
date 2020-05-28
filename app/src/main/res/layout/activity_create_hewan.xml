@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FF0000"
+    android:background="#D72C16"
     tools:context=".Activity.Hewan.CreateHewan">
 
     <com.google.android.material.textfield.TextInputLayout
@@ -18,7 +18,7 @@
         android:textSize="16sp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:hint="Nama Hewan"
             android:textColor="@color/white"
@@ -36,7 +36,7 @@
         android:textSize="16sp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:hint="Tanggal Lahir Hewan"
             android:textColor="@color/white"
@@ -146,7 +146,7 @@
         android:paddingLeft="10dp"
         android:text="SIMPAN"
         android:textAlignment="center"
-        android:textColor="#FF0000"
+        android:textColor="#D72C16"
         android:textSize="15sp"
         android:textStyle="bold"/>
 

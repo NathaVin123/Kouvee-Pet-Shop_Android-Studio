@@ -10,7 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".View.Pengadaan.DaftarPengadaan.PengadaanAdapter"></activity>
+        <activity android:name=".View.PenjualanProduk.DaftarPenjualanProduk.ShowPenjualanProduk"></activity>
+        <activity android:name=".View.PenjualanProduk.DaftarPenjualanProduk.PenjualanProdukAdapter" />
+        <activity android:name=".View.Pengadaan.DaftarPengadaan.PengadaanAdapter" />
         <activity android:name=".View.Pengadaan.DaftarPengadaan.ShowPengadaan" />
         <activity android:name=".View.Pengadaan.DaftarProdukPengadaanTertentu.UpdatePengadaanShow" />
         <activity android:name=".View.Pengadaan.DaftarProdukPengadaanTertentu.UpdatePengadaanAdapter" />

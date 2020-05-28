@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,231 +7,339 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
-    tools:context=".Fragments.DataMasterFragment">
+    tools:context=".Fragments.HomeFragment">
 
-    <ImageView
-        android:id="@+id/btnUkuran"
-        android:layout_width="140dp"
-        android:layout_height="140dp"
-        android:layout_weight="1"
-        android:background="@drawable/size"
-        android:backgroundTint="@android:color/holo_blue_light"
-        android:scaleType="centerCrop"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.069"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.524"/>
-
-    <TextView
-        android:id="@+id/txtUkuran"
-        android:layout_width="140dp"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="UKURAN"
-        android:textSize="30dp"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:visibility="visible"
+        android:gravity="center_vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.07"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.630"/>
+        app:layout_constraintTop_toTopOf="parent">
 
-    <ImageView
-        android:id="@+id/btnJenis"
-        android:layout_width="140dp"
-        android:layout_height="140dp"
-        android:layout_weight="1"
-        android:background="@drawable/type"
-        android:backgroundTint="@android:color/holo_blue_light"
-        android:scaleType="centerCrop"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.93"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.524"/>
+        <LinearLayout
+            android:id="@+id/linearLayoutCH"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:clipToPadding="false"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="visible">
 
-    <TextView
-        android:id="@+id/txtJenis"
-        android:layout_width="140dp"
-        android:layout_height="wrap_content"
-        android:text="JENIS"
-        android:textSize="30dp"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.93"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.630"/>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_customerID"
+                android:layout_width="180dp"
+                android:layout_height="200dp"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground">
 
-    <ImageView
-        android:id="@+id/btnProduk"
-        android:layout_width="140dp"
-        android:layout_height="140dp"
-        android:layout_weight="1"
-        android:background="@drawable/product"
-        android:backgroundTint="@android:color/holo_blue_light"
-        android:scaleType="centerCrop"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.069"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.099"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:background="#F7EFe2"
+                    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/txtProduk"
-        android:layout_width="140dp"
-        android:layout_height="wrap_content"
-        android:text="LAYANAN"
-        android:textSize="30dp"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.93"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.275"/>
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:background="@drawable/customer"
+                        android:backgroundTint="#F25C00"
+                        android:padding="10dp"/>
 
-    <ImageView
-        android:id="@+id/btnLayanan"
-        android:layout_width="140dp"
-        android:layout_height="140dp"
-        android:layout_weight="1"
-        android:background="@drawable/layanan"
-        android:backgroundTint="@android:color/holo_blue_light"
-        android:scaleType="centerCrop"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.93"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.099"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Customer"
+                        android:textSize="25sp"
+                        android:textStyle="bold"/>
 
-    <TextView
-        android:id="@+id/txtLayanan"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:text="PRODUK"
-        android:textSize="30dp"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.275"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="10dp"
+                        android:background="@color/grey" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-    <ImageView
-        android:id="@+id/btnCustomer"
-        android:layout_width="140dp"
-        android:layout_height="140dp"
-        android:layout_weight="1"
-        android:background="@drawable/customer"
-        android:backgroundTint="@android:color/holo_blue_light"
-        android:scaleType="centerCrop"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.069"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.099"/>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_hewanID"
+                android:layout_width="180dp"
+                android:layout_height="200dp"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground">
 
-    <TextView
-        android:id="@+id/txtCustomer"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:text="CUSTOMER"
-        android:textSize="30dp"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.275"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:background="#F7EFe2"
+                    android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/btnHewan"
-        android:layout_width="140dp"
-        android:layout_height="140dp"
-        android:layout_weight="1"
-        android:background="@drawable/hewan"
-        android:backgroundTint="@android:color/holo_blue_light"
-        android:scaleType="centerCrop"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.93"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.099"/>
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:background="@drawable/hewan"
+                        android:backgroundTint="#F25C00"
+                        android:padding="10dp"/>
 
-    <TextView
-        android:id="@+id/txtHewan"
-        android:layout_width="140dp"
-        android:layout_height="wrap_content"
-        android:text="HEWAN"
-        android:textSize="30dp"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.93"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.275"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Hewan"
+                        android:textSize="25sp"
+                        android:textStyle="bold"/>
 
-    <ImageView
-        android:id="@+id/btnSupplier"
-        android:layout_width="140dp"
-        android:layout_height="140dp"
-        android:layout_weight="1"
-        android:background="@drawable/supplier"
-        android:backgroundTint="@android:color/holo_blue_light"
-        android:scaleType="centerCrop"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.912"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="10dp"
+                        android:background="@color/grey" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
 
-    <TextView
-        android:id="@+id/txtSupplier"
-        android:layout_width="140dp"
-        android:layout_height="wrap_content"
-        android:text="SUPPLIER"
-        android:textSize="30dp"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.950"/>
+        <LinearLayout
+            android:id="@+id/linearLayoutPL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:clipToPadding="false"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_produkID"
+                android:layout_width="180dp"
+                android:layout_height="200dp"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="5dp"
+                    android:gravity="center"
+                    android:background="#F7EFe2"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:background="@drawable/product"
+                        android:backgroundTint="#F25C00"
+                        android:padding="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Produk"
+                        android:textSize="25sp"
+                        android:textStyle="bold"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="10dp"
+                        android:background="@color/grey" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_layananID"
+                android:layout_width="180dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="5dp"
+                    android:gravity="center"
+                    android:background="#F7EFe2"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:background="@drawable/layanan"
+                        android:backgroundTint="#F25C00"
+                        android:padding="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Layanan"
+                        android:textSize="25sp"
+                        android:textStyle="bold"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="10dp"
+                        android:background="@color/grey" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutJU"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="240dp"
+            android:clipToPadding="false"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_jenishewanID"
+                android:layout_width="180dp"
+                android:layout_height="200dp"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="5dp"
+                    android:gravity="center"
+                    android:background="#F7EFe2"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:background="@drawable/type"
+                        android:backgroundTint="#F25C00"
+                        android:padding="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Jenis Hewan"
+                        android:textSize="25sp"
+                        android:textStyle="bold"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="10dp"
+                        android:background="@color/grey" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_ukuranhewanID"
+                android:layout_width="180dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="5dp"
+                    android:gravity="center"
+                    android:background="#F7EFe2"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:background="@drawable/size"
+                        android:backgroundTint="#F25C00"
+                        android:padding="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Ukuran Hewan"
+                        android:textSize="25sp"
+                        android:textStyle="bold"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="10dp"
+                        android:background="@color/grey" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="460dp"
+            android:clipToPadding="false"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_supplierID"
+                android:layout_width="180dp"
+                android:layout_height="200dp"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:background="#F7EFe2"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:background="@drawable/supplier"
+                        android:backgroundTint="#F25C00"
+                        android:padding="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Supplier"
+                        android:textSize="25sp"
+                        android:textStyle="bold"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="10dp"
+                        android:background="@color/grey" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

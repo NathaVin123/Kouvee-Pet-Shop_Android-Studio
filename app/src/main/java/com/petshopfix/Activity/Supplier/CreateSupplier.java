@@ -22,6 +22,8 @@ import com.petshopfix.View.Supplier.ListSupplier;
 
 import java.util.List;
 
+import okhttp3.MediaType;
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 
@@ -31,7 +33,6 @@ public class CreateSupplier extends AppCompatActivity {
     private Button btnSimpan;
     private DatabaseHandler db;
     private ProgressDialog progressDialog = null;
-    private List<SupplierDAO> listSupplier;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,11 +52,11 @@ public class CreateSupplier extends AppCompatActivity {
 
         db = new DatabaseHandler(this);
         progressDialog = new ProgressDialog(CreateSupplier.this);
-        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        getSupportActionBar().setCustomView(R.layout.actionbar);
-        TextView judul = (TextView) findViewById(getResources().getIdentifier("action_bar_title", "id", getPackageName()));
-        judul.setText("Create Supplier");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
+        getSupportActionBar().setLogo(R.drawable.logoapp3);
     }
 
     private void init() {
@@ -81,11 +82,22 @@ public class CreateSupplier extends AppCompatActivity {
                 }
                 else
                 {
+                    RequestBody nama_supplier =
+                            RequestBody.create(MediaType.parse("multipart/form-data"), namaS);
+                    RequestBody alamat_supplier =
+                            RequestBody.create(MediaType.parse("multipart/form-data"), alamatS);
+                    RequestBody noTelp_supplier =
+                            RequestBody.create(MediaType.parse("multipart/form-data"), noTelpS);
+                    RequestBody stok =
+                            RequestBody.create(MediaType.parse("multipart/form-data"), String.valueOf(stokS));
+                    RequestBody updateLogId =
+                            RequestBody.create(MediaType.parse("multipart/form-data"), updateLogIdS);
+
                     ApiSupplier apiService = ApiClient.getClient().create(ApiSupplier.class);
-                    Call<Response> supplier = apiService.createSupplier(namaS, alamatS, noTelpS, stokS, updateLogIdS);
+                    Call<Response> supplier = apiService.createSupplier(nama_supplier, alamat_supplier, noTelp_supplier, stok, updateLogId);
 
                     progressDialog.setMessage("Loading...");
-                    progressDialog.setTitle("Tambah Data Supplier");
+                    progressDialog.setTitle("Menambahkan Data Supplier");
                     progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
 
                     progressDialog.show();

@@ -2,6 +2,7 @@ package com.petshopfix.Activity.Ukuran;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,7 +16,7 @@ import com.petshopfix.View.Ukuran.ListUkuran;
 
 public class MenuUkuran extends AppCompatActivity {
 
-    private ImageView btnTambah, btnTampil, btnRestoreLog;
+    private CardView cvAdd, cvTampil, cvRestoreLog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +28,9 @@ public class MenuUkuran extends AppCompatActivity {
     }
 
     private void setAtribut(){
-        btnTambah = (ImageView) findViewById(R.id.btnTambahUkuran);
-        btnTampil = (ImageView) findViewById(R.id.btnTampilUkuran);
-        btnRestoreLog = (ImageView) findViewById(R.id.btnRestoreLogUkuran);
+        cvAdd = (CardView) findViewById(R.id.btnTambahUkuran);
+        cvTampil = (CardView) findViewById(R.id.btnTampilUkuran);
+        cvRestoreLog = (CardView) findViewById(R.id.btnRestoreLogUkuran);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.actionbar);
         TextView judul = (TextView) findViewById(getResources().getIdentifier("action_bar_title", "id", getPackageName()));
@@ -38,7 +39,7 @@ public class MenuUkuran extends AppCompatActivity {
     }
 
     private void init() {
-        btnTambah.setOnClickListener(new View.OnClickListener() {
+        cvAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), CreateUkuran.class);
@@ -47,7 +48,7 @@ public class MenuUkuran extends AppCompatActivity {
             }
         });
 
-        btnTampil.setOnClickListener(new View.OnClickListener() {
+        cvTampil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), ListUkuran.class);
@@ -56,7 +57,7 @@ public class MenuUkuran extends AppCompatActivity {
             }
         });
 
-        btnRestoreLog.setOnClickListener(new View.OnClickListener() {
+        cvRestoreLog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), ListUkuran.class);

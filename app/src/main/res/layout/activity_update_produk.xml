@@ -12,7 +12,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FF0000"
+        android:background="#D72C16"
         android:orientation="horizontal"
         android:paddingTop="10dp"
         android:paddingBottom="10dp">
@@ -42,10 +42,11 @@
         </RelativeLayout>
 
         <LinearLayout
-            android:layout_width="170dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
             android:orientation="vertical">
 
             <TextView
@@ -57,7 +58,7 @@
                 android:text="ID Produk"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 tools:layout_editor_absoluteX="195dp"
                 tools:layout_editor_absoluteY="111dp"/>
 
@@ -76,17 +77,16 @@
 
             <Button
                 android:id="@+id/btnUpload"
-                android:layout_width="120dp"
+                android:layout_width="100dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="43dp"
-                android:layout_marginLeft="25dp"
+                android:layout_marginLeft="15dp"
                 android:background="@drawable/roundedbutton"
                 android:backgroundTint="@android:color/white"
                 android:fontFamily="sans-serif-medium"
                 android:paddingLeft="10dp"
                 android:text="Upload  "
-                android:textAlignment="center"
-                android:textColor="#FF0000"
+                android:textColor="#D72C16"
                 android:textSize="15sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -99,16 +99,16 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="30dp"
-        android:textColorHint="@color/red"
+        android:textColorHint="#C0B2B5"
         android:textSize="16sp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:hint="Nama Produk"
-            android:textColor="@color/red"
-            android:textColorHighlight="@color/red"
-            android:textColorHint="@color/red"
+            android:textColor="#B6452C"
+            android:textColorHighlight="#B6452C"
+            android:textColorHint="#B6452C"
             android:textSize="16sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -118,17 +118,17 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="15dp"
-        android:textColorHint="@color/red"
+        android:textColorHint="#C0B2B5"
         android:textSize="16sp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:hint="Harga Produk"
             android:inputType="numberDecimal"
-            android:textColor="@color/red"
-            android:textColorHighlight="@color/red"
-            android:textColorHint="@color/red"
+            android:textColor="#B6452C"
+            android:textColorHighlight="#B6452C"
+            android:textColorHint="#B6452C"
             android:textSize="16sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -138,17 +138,17 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="15dp"
-        android:textColorHint="@color/red"
+        android:textColorHint="#C0B2B5"
         android:textSize="16sp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:hint="Stok Produk"
             android:inputType="number"
-            android:textColor="@color/red"
-            android:textColorHighlight="@color/red"
-            android:textColorHint="@color/red"
+            android:textColor="#B6452C"
+            android:textColorHighlight="#B6452C"
+            android:textColorHint="#B6452C"
             android:textSize="16sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -158,17 +158,17 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="15dp"
-        android:textColorHint="@color/red"
+        android:textColorHint="#C0B2B5"
         android:textSize="16sp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:hint="Min Stok Produk"
             android:inputType="number"
-            android:textColor="@color/red"
-            android:textColorHighlight="@color/red"
-            android:textColorHint="@color/red"
+            android:textColor="#B6452C"
+            android:textColorHighlight="#B6452C"
+            android:textColorHint="#B6452C"
             android:textSize="16sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -178,23 +178,23 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="15dp"
-        android:textColorHint="@color/red"
+        android:textColorHint="#C0B2B5"
         android:textSize="16sp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:hint="Satuan Produk"
-            android:textColor="@color/red"
-            android:textColorHighlight="@color/red"
-            android:textColorHint="@color/red"
+            android:textColor="#B6452C"
+            android:textColorHighlight="#B6452C"
+            android:textColorHint="#B6452C"
             android:textSize="16sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="40dp"
         android:gravity="center"
         android:orientation="horizontal">
 
@@ -203,7 +203,7 @@
             android:layout_width="120dp"
             android:layout_height="40dp"
             android:background="@drawable/roundedbutton"
-            android:backgroundTint="@color/red"
+            android:backgroundTint="#D72C16"
             android:drawableTint="#FFFFFF"
             android:fontFamily="sans-serif-medium"
             android:paddingLeft="15dp"
@@ -212,7 +212,7 @@
             android:textSize="14sp"
             android:textStyle="bold"
             tools:layout_editor_absoluteX="293dp"
-            tools:layout_editor_absoluteY="654dp" />
+            tools:layout_editor_absoluteY="600dp" />
     </LinearLayout>
 
 </LinearLayout>

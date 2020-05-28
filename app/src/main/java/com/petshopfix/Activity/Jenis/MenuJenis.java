@@ -2,6 +2,7 @@ package com.petshopfix.Activity.Jenis;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,7 +16,7 @@ import com.petshopfix.View.Jenis.ListJenis;
 
 public class MenuJenis extends AppCompatActivity {
 
-    private ImageView btnTambah, btnTampil, btnRestoreLog;
+    private CardView cvAdd, cvTampil, cvRestoreLog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +28,9 @@ public class MenuJenis extends AppCompatActivity {
     }
 
     private void setAtribut() {
-        btnTambah = (ImageView) findViewById(R.id.btnTambahUkuran);
-        btnTampil = (ImageView) findViewById(R.id.btnTampilUkuran);
-        btnRestoreLog = (ImageView) findViewById(R.id.btnRestoreLogUkuran);
+        cvAdd = (CardView) findViewById(R.id.btnTambahJenis);
+        cvTampil = (CardView) findViewById(R.id.btnTampilJenis);
+        cvRestoreLog = (CardView) findViewById(R.id.btnRestoreLogJenis);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.actionbar);
         TextView judul = (TextView) findViewById(getResources().getIdentifier("action_bar_title", "id", getPackageName()));
@@ -38,7 +39,7 @@ public class MenuJenis extends AppCompatActivity {
     }
 
     private void init() {
-        btnTambah.setOnClickListener(new View.OnClickListener() {
+        cvAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), CreateJenis.class);
@@ -47,7 +48,7 @@ public class MenuJenis extends AppCompatActivity {
             }
         });
 
-        btnTampil.setOnClickListener(new View.OnClickListener() {
+        cvTampil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), ListJenis.class);
@@ -56,7 +57,7 @@ public class MenuJenis extends AppCompatActivity {
             }
         });
 
-        btnRestoreLog.setOnClickListener(new View.OnClickListener() {
+        cvRestoreLog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), ListJenis.class);

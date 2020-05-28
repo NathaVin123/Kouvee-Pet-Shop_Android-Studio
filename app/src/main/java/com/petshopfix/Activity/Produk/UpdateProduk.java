@@ -78,7 +78,6 @@ public class UpdateProduk extends AppCompatActivity {
         txtStok = (TextInputLayout) findViewById(R.id.txtStokProduk);
         txtMinStok = (TextInputLayout) findViewById(R.id.txtMinStokProduk);
         txtSatuan = (TextInputLayout) findViewById(R.id.txtSatuanProduk);
-
         txtImage = (ImageView) findViewById(R.id.dataGambarProduk);
         btnUpload = (Button) findViewById(R.id.btnUpload);
         btnSave = (Button) findViewById(R.id.btnSave);
@@ -100,11 +99,11 @@ public class UpdateProduk extends AppCompatActivity {
 
         db = new DatabaseHandler(this);
         progressDialog = new ProgressDialog(UpdateProduk.this);
-        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        getSupportActionBar().setCustomView(R.layout.actionbar);
-        TextView judul =(TextView)findViewById(getResources().getIdentifier("action_bar_title", "id", getPackageName()));
-        judul.setText("UPDATE PRODUK");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
+        getSupportActionBar().setLogo(R.drawable.logoapp3);
     }
 
     private void init() {
@@ -115,6 +114,7 @@ public class UpdateProduk extends AppCompatActivity {
                 View view = inflater.inflate(R.layout.choose_media, null);
 
                 final AlertDialog alertD = new AlertDialog.Builder(UpdateProduk.this).create();
+
                 Button btnKamera = (Button) view.findViewById(R.id.btnKamera);
                 Button btnGaleri = (Button) view.findViewById(R.id.btnGaleri);
 
@@ -122,13 +122,13 @@ public class UpdateProduk extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                            if (checkSelfPermission(Manifest.permission.CAMERA) ==
+                            if(checkSelfPermission(Manifest.permission.CAMERA)==
                                     PackageManager.PERMISSION_DENIED ||
-                                    checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) ==
+                                    checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)==
                                             PackageManager.PERMISSION_DENIED){
-                                String[] permission = {Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
-                                requestPermissions(permission, PERMISSION_CODE);
-                            }else {
+                                String[] permission = {Manifest.permission.CAMERA,Manifest.permission.WRITE_EXTERNAL_STORAGE};
+                                requestPermissions(permission,PERMISSION_CODE);
+                            } else {
                                 openCamera();
                             }
                         }else {
@@ -142,10 +142,10 @@ public class UpdateProduk extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                            if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) ==
-                                    PackageManager.PERMISSION_DENIED) {
+                            if(checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)==
+                                    PackageManager.PERMISSION_DENIED){
                                 String[] permission = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
-                                requestPermissions(permission, PERMISSION_CODE);
+                                requestPermissions(permission,PERMISSION_CODE);
                             } else {
                                 FileChooser();
                             }
@@ -175,13 +175,11 @@ public class UpdateProduk extends AppCompatActivity {
                 satuanP = txtSatuan.getEditText().getText().toString();
                 updateLog_byP = db.getUser(1).getNIP();
 
-                if(namaP.isEmpty()){
-                    Toast.makeText(getApplicationContext(),"Nama Anda Tidak Boleh Kosong",Toast.LENGTH_SHORT).show();
-                }else if(hargaP < 1 || stokP < 1 || minStokP < 1){
-                    Toast.makeText(getApplicationContext(),"Data harga, stok dan jumlah minimal tidak boleh lebih kecil atau sama dengan 0 !",Toast.LENGTH_SHORT).show();
-                }else if(satuanP.isEmpty()){
-                    Toast.makeText(getApplicationContext(),"Satuan Anda Tidak Boleh Kosong",Toast.LENGTH_SHORT).show();
-                }else {
+                if(namaP.isEmpty() || satuanP.isEmpty()){
+                    Toast.makeText(getApplicationContext(),"Data Anda Tidak Boleh Kosong",Toast.LENGTH_SHORT).show();
+                }else if(hargaP < 1 || stokP < 1 || minStokP < 1) {
+                    Toast.makeText(getApplicationContext(), "Data harga, stok dan jumlah minimal tidak boleh lebih kecil atau sama dengan 0 !", Toast.LENGTH_SHORT).show();
+                } else {
                     RequestBody nama_produk =
                             RequestBody.create(MediaType.parse("multipart/form-data"), namaP);
                     RequestBody harga_produk =
@@ -261,7 +259,7 @@ public class UpdateProduk extends AppCompatActivity {
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults){
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         switch (requestCode){
             case PERMISSION_CODE:{
                 if(grantResults.length > 0 && grantResults[0] ==
@@ -295,7 +293,7 @@ public class UpdateProduk extends AppCompatActivity {
         startActivityForResult(cameraIntent, IMAGE_CAPTURE_CODE);
     }
 
-    public static String getRealPathFromUri(Context context, Uri contentUri){
+    public static String getRealPathFromUri(Context context, Uri contentUri) {
         Cursor cursor = null;
         try {
             String[] proj = { MediaStore.Images.Media.DATA };
@@ -303,8 +301,7 @@ public class UpdateProduk extends AppCompatActivity {
             int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
             cursor.moveToFirst();
             return cursor.getString(column_index);
-        }
-        finally {
+        } finally {
             if (cursor != null) {
                 cursor.close();
             }

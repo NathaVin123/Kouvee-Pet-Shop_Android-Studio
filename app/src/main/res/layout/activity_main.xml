@@ -5,71 +5,154 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/red"
+    android:background="#F70025"
     tools:context=".Activity.MainActivity">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/txtNIP"
-        android:layout_width="330dp"
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="400dp"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/ic_back_login"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:scaleType="fitXY"/>
+
+    <RelativeLayout
+        android:id="@+id/name_app"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="290dp"
-        android:fontFamily="monospace"
-        android:textColorHint="@color/white"
-        android:textSize="16sp">
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="260dp"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="NIP"
-            android:inputType="text"
-            android:textColor="@android:color/background_light"
-            android:textColorHighlight="?attr/colorAccent"
-            android:textColorHint="@android:color/background_light"
-            android:textColorLink="?attr/colorAccent" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/txtPassword"
-        android:layout_width="330dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="370dp"
-        android:fontFamily="monospace"
-        android:textColorHint="@color/white"
-        android:textSize="16sp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="260dp"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/acme"
+            android:text="KOUVEE PET SHOP"
+            android:textStyle="bold"
+            android:textSize="40dp"
+            android:textAlignment="center"
+            android:textColor="#F70025"/>
+        
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:textColor="@android:color/background_light"
-            android:textColorHighlight="?attr/colorAccent"
-            android:textColorHint="@android:color/background_light"
-            android:textColorLink="?attr/colorAccent" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <Button
-        android:id="@+id/btnMasuk"
-        android:layout_width="120dp"
-        android:layout_height="40dp"
-        android:layout_marginLeft="120dp"
-        android:layout_marginTop="500dp"
-        android:background="@drawable/roundedbutton"
-        android:backgroundTint="@android:color/background_light"
-        android:fontFamily="sans-serif-medium"
-        android:text="Masuk"
-        android:textColor="@color/red"
-        android:textColorHint="@android:color/background_light"
-        android:textSize="18sp" />
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="60dp"
+            android:fontFamily="@font/acme"
+            android:text="@string/kebutuhan_hewan"
+            android:textSize="15sp"
+            android:textColor="#F70025"
+            android:textAlignment="center"/>
+    </RelativeLayout>
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="198dp"
-        android:layout_height="134dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="90dp"
-        app:srcCompat="@drawable/logoapp1" />
+        android:layout_below="@+id/name_app"
+        android:layout_width="100dp"
+        android:layout_height="120dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="140dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="20dp"
+        app:srcCompat="@drawable/logoapp1"/>
+
+    <LinearLayout
+        android:id="@+id/welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/back">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:fontFamily="@font/acme"
+            android:text="Selamat Datang Wahai Para Pegawai"
+            android:textColor="#F7EFE2"
+            android:textSize="20sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/txt_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/welcome"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="15dp"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtNIP"
+            style="@style/Widget.Design.TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/acme"
+                android:hint="NIP"
+                android:inputType="text"
+                android:paddingStart="10dp"
+                android:paddingEnd="0dp"
+                android:textColor="#F25C00"
+                android:textColorHint="#F25C00"
+                android:textSize="20sp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtPassword"
+            style="@style/Widget.Design.TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/acme"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:paddingStart="10dp"
+                android:paddingEnd="0dp"
+                android:textColor="#F25C00"
+                android:textColorHint="#F25C00"
+                android:textSize="20sp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnMasuk"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/txt_login"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="110dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="190dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/roundedbutton"
+            android:backgroundTint="@android:color/background_light"
+            android:fontFamily="sans-serif-medium"
+            android:text="Masuk"
+            android:textColor="@color/red"
+            android:textColorHint="@android:color/background_light"
+            android:textSize="18sp" />
+    </LinearLayout>
 
 </RelativeLayout>

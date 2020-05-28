@@ -2,6 +2,7 @@ package com.petshopfix.Activity.Produk;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,7 +16,7 @@ import com.petshopfix.View.Produk.ListProduk;
 
 public class MenuProduk extends AppCompatActivity {
 
-    private ImageView btnTambah, btnTampil, btnRestoreLog;
+    private CardView cvAdd, cvTampil, cvRestoreLog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +28,9 @@ public class MenuProduk extends AppCompatActivity {
     }
 
     private void setAtribut() {
-        btnTambah = (ImageView) findViewById(R.id.btnTambahProduk);
-        btnTampil = (ImageView) findViewById(R.id.btnTampilProduk);
-        btnRestoreLog = (ImageView) findViewById(R.id.btnRestoreLogProduk);
+        cvAdd = (CardView) findViewById(R.id.btnTambahProduk);
+        cvTampil = (CardView) findViewById(R.id.btnTampilProduk);
+        cvRestoreLog = (CardView) findViewById(R.id.btnRestoreLogProduk);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.actionbar);
 
@@ -39,14 +40,14 @@ public class MenuProduk extends AppCompatActivity {
     }
 
     private void init() {
-        btnTambah.setOnClickListener(new View.OnClickListener() {
+        cvAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), CreateProduk.class));
             }
         });
 
-        btnTampil.setOnClickListener(new View.OnClickListener() {
+        cvTampil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), ListProduk.class);
@@ -55,7 +56,7 @@ public class MenuProduk extends AppCompatActivity {
             }
         });
 
-        btnRestoreLog.setOnClickListener(new View.OnClickListener() {
+        cvRestoreLog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), ListProduk.class);

@@ -7,20 +7,13 @@
     <string name="menu_tambah">Tambah</string>
     <string name="menu_notifikasi">Notifikasi</string>
 
-    <string-array name="sortirPengadaan">
-        <item>Sortir</item>
-        <item>Harga Termahal</item>
-        <item>Harga Termurah</item>
-        <item>Stok Terbanyak</item>
-        <item>Stok Tersedikit</item>
-    </string-array>
+    <string name="btn_cancel">BATAL</string>
 
     //Button
-    <string name="btn_cancel">BATAL</string>
     <string name="btn_save">SIMPAN</string>
+    <string name="hintTV1">ID</string>
 
     //Hint
-    <string name="hintTV1">ID</string>
     <string name="nama_supplier">Nama Supplier</string>
     <string name="nomor_hp">Nomor HP</string>
     <string name="simpan">SIMPAN</string>
@@ -31,10 +24,17 @@
     <string name="tambah_ukuran_hewan">Tambah Ukuran Hewan</string>
     <string name="kouvee_pet_shop">Kouvee Pet Shop</string>
     <string name="lihat_semua">Lihat Semua</string>
-    <string name="caring_your_beloved_pet">.caring your beloved pet</string>
+    <string name="kebutuhan_hewan">Menyediakan Kebutuhan Hewan Kesayangan Anda</string>
     <string name="id_supplier">ID Supplier</string>
     <string name="tambah_layanan">TAMBAH LAYANAN</string>
     <string name="title_activity_detail_pengadaan">detailPengadaan</string>
+    <string-array name="sortirPengadaan">
+        <item>Sortir</item>
+        <item>Harga Termahal</item>
+        <item>Harga Termurah</item>
+        <item>Stok Terbanyak</item>
+        <item>Stok Tersedikit</item>
+    </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->
 </resources>

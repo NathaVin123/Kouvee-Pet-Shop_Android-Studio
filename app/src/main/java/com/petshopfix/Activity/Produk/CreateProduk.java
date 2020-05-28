@@ -77,7 +77,7 @@ public class CreateProduk extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
-        getSupportActionBar().setLogo(R.drawable.logoapp1);
+        getSupportActionBar().setLogo(R.drawable.logoapp3);
     }
 
     private void init() {
@@ -96,18 +96,17 @@ public class CreateProduk extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
-                            if (checkSelfPermission(Manifest.permission.CAMERA)==
+                            if(checkSelfPermission(Manifest.permission.CAMERA)==
                                     PackageManager.PERMISSION_DENIED ||
                                     checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)==
                                             PackageManager.PERMISSION_DENIED){
-                                String[] permission = {Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
-                                requestPermissions(permission, PERMISSION_CODE);
+                                String[] permission = {Manifest.permission.CAMERA,Manifest.permission.WRITE_EXTERNAL_STORAGE};
+                                requestPermissions(permission,PERMISSION_CODE);
                             }
                             else {
                                 openCamera();
                             }
-                        }
-                        else {
+                        } else {
                             openCamera();
                         }
                         alertD.dismiss();
@@ -118,16 +117,14 @@ public class CreateProduk extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.M) {
-                            if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)==
+                            if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) ==
                                     PackageManager.PERMISSION_DENIED) {
                                 String[] permission = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
                                 requestPermissions(permission, PERMISSION_CODE);
-                            }
-                            else {
+                            } else {
                                 FileChooser();
                             }
-                        }
-                        else {
+                        } else {
                             FileChooser();
                         }
                         alertD.dismiss();
@@ -141,7 +138,7 @@ public class CreateProduk extends AppCompatActivity {
         btnSimpan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String namaP, updateLogIdP, satuanP;
+                String namaP, satuanP, updateLogIdP;
                 Double hargaP;
                 int stokP, minStokP;
 
@@ -156,10 +153,12 @@ public class CreateProduk extends AppCompatActivity {
                 if (image_uri==null)
                 {
                     Toast.makeText(getApplicationContext(),"Gambar harus di Upload",Toast.LENGTH_SHORT).show();
-                }else if (namaP.isEmpty() || satuanP.isEmpty())
+                }
+                else if (namaP.isEmpty() || satuanP.isEmpty())
                 {
                     Toast.makeText(getApplicationContext(),"Data Tidak Boleh Kosong",Toast.LENGTH_SHORT).show();
-                }else if (hargaP < 1 || stokP < 1 || minStokP < 1)
+                }
+                else if (hargaP < 1 || stokP < 1 || minStokP < 1)
                 {
                     Toast.makeText(getApplicationContext(),"Data harga, stok dan minimal tidak boleh lebih kecil atau sama dengan 0 !",Toast.LENGTH_SHORT).show();
                 }
@@ -174,11 +173,11 @@ public class CreateProduk extends AppCompatActivity {
                             RequestBody.create(MediaType.parse("multipart/form-data"), String.valueOf(minStokP));
                     RequestBody satuan_produk =
                             RequestBody.create(MediaType.parse("multipart/form-data"), satuanP);
+
                     RequestBody requestFile =
                             RequestBody.create(MediaType.parse("images/*"), file);
                     MultipartBody.Part body =
                             MultipartBody.Part.createFormData("gambar", file.getName(), requestFile);
-
                     RequestBody updateLogId =
                             RequestBody.create(MediaType.parse("multipart/form-data"), updateLogIdP);
 
