@@ -33,8 +33,8 @@ import retrofit2.Callback;
 
 public class PengadaanAdapter extends RecyclerView.Adapter<PengadaanAdapter.PengadaanViewHolder> {
 
-//    public static final String DEST = "./target/sandbox/stamper/stamp_header2.pdf";
-//    public static final String SRC = "./src/main/resources/pdfs/Wrong.pdf";
+    public static final String DEST = "./target/sandbox/stamper/stamp_header2.pdf";
+    public static final String SRC = "./src/main/resources/pdfs/Wrong.pdf";
     private List<TransaksiPengadaanDAO> transaksiPengadaanList;
     private List<TransaksiPengadaanDAO> transaksiPengadaanListFiltered;
     private Context context;
@@ -146,13 +146,13 @@ public class PengadaanAdapter extends RecyclerView.Adapter<PengadaanAdapter.Peng
 
         final ProgressDialog progressDialog;
         progressDialog = new ProgressDialog(context);
-        progressDialog.setMessage("loading....");
+        progressDialog.setMessage("Loading....");
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progressDialog.show();
 
         detailPengadaan.enqueue(new Callback<Response>() {
             @Override
-            public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
+            public void onResponse(Call<com.petshopfix.API.Response> call, retrofit2.Response<Response> response) {
                 if(response.code() == 200)
                 {
                     progressDialog.dismiss();
@@ -173,9 +173,9 @@ public class PengadaanAdapter extends RecyclerView.Adapter<PengadaanAdapter.Peng
         ApiDetailPengadaan apiService = ApiClient.getClient().create(ApiDetailPengadaan.class);
         Call<com.petshopfix.API.Response> detailPengadaan = apiService.tampilPengadaan(nomorPO);
 
-        detailPengadaan.enqueue(new Callback<Response>() {
+        detailPengadaan.enqueue(new Callback<com.petshopfix.API.Response>() {
             @Override
-            public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
+            public void onResponse(Call<com.petshopfix.API.Response> call, retrofit2.Response<Response> response) {
                 if(!response.body().getDetailPengadaan().isEmpty())
                 {
                     for(int i=0; i < response.body().getDetailPengadaan().size() ; i++)
@@ -192,7 +192,7 @@ public class PengadaanAdapter extends RecyclerView.Adapter<PengadaanAdapter.Peng
             }
 
             @Override
-            public void onFailure(Call<Response> call, Throwable t) {
+            public void onFailure(Call<com.petshopfix.API.Response> call, Throwable t) {
                 Toast.makeText(context, t.getCause().toString(), Toast.LENGTH_SHORT).show();
             }
         });
@@ -209,9 +209,9 @@ public class PengadaanAdapter extends RecyclerView.Adapter<PengadaanAdapter.Peng
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progressDialog.show();
 
-        pengadaan.enqueue(new Callback<Response>() {
+        pengadaan.enqueue(new Callback<com.petshopfix.API.Response>() {
             @Override
-            public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
+            public void onResponse(Call<com.petshopfix.API.Response> call, retrofit2.Response<Response> response) {
                 System.out.println(response.body());
                 if(response.code() == 200)
                 {

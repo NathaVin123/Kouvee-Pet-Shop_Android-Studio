@@ -73,12 +73,11 @@ public class CreatePengadaanShow extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
+                adapter.getFilter().filter(s.toString());
             }
 
             @Override
             public void afterTextChanged(Editable s) {
-                adapter.getFilter().filter(s.toString());
             }
         });
 
@@ -177,7 +176,7 @@ public class CreatePengadaanShow extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if(cek.equals("Ubah Pengadaan"))
+        if(cek.equals("Update Pengadaan"))
         {
             Intent i = new Intent(getApplicationContext(), UpdatePengadaanShow.class);
             i.putExtra("nomorPO", nomorPO);

@@ -33,8 +33,8 @@ public class CreatePengadaan extends AppCompatActivity {
     private TextView nomorPO, txtAlamat, txtNoTelp;
     private String nomorPemesanan, nama_supplier;
     private Spinner dataSupplier;
-    private int selectIDSupplier;
-    private List<SupplierDAO> supplierList;
+    private int selectedIDSupplier;
+    private List<SupplierDAO> listSupplier;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,10 +48,10 @@ public class CreatePengadaan extends AppCompatActivity {
     private void setAtribut() {
         btnTambah = (Button) findViewById(R.id.btnTambahPemesanan);
         nomorPO = (TextView) findViewById(R.id.txtNomorPO);
-        txtAlamat = (TextView) findViewById(R.id.txtAlamatSupplier);
-        txtNoTelp = (TextView) findViewById(R.id.txtNoTelpSupplier);
+        txtAlamat = (TextView) findViewById(R.id.txtAlamat);
+        txtNoTelp = (TextView) findViewById(R.id.txtNoTelp);
         dataSupplier = (Spinner) findViewById(R.id.dataNamaSupplier);
-        supplierList = new ArrayList<>();
+        listSupplier = new ArrayList<>();
 
         setnomorPO();
         setSupplier();
@@ -66,12 +66,12 @@ public class CreatePengadaan extends AppCompatActivity {
             public void onResponse(Call<com.petshopfix.API.Response> call, retrofit2.Response<com.petshopfix.API.Response> response) {
                 if (!response.body().getSupplier().isEmpty())
                 {
-                    supplierList.addAll(response.body().getSupplier());
+                    listSupplier.addAll(response.body().getSupplier());
                     List<String> daftarNamaSupplier = new ArrayList<>();
-                    selectIDSupplier=supplierList.get(0).getId_supplier();
-                    for (int i=0; i<supplierList.size(); i++)
+                    selectedIDSupplier=listSupplier.get(0).getId_supplier();
+                    for (int i=0; i<listSupplier.size(); i++)
                     {
-                        daftarNamaSupplier.add(supplierList.get(i).getNama_supplier());
+                        daftarNamaSupplier.add(listSupplier.get(i).getNama_supplier());
                     }
                     ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(),
                             android.R.layout.simple_dropdown_item_1line, daftarNamaSupplier);
@@ -81,13 +81,13 @@ public class CreatePengadaan extends AppCompatActivity {
                     dataSupplier.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                         @Override
                         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                            for (int i=0; i<supplierList.size(); i++)
+                            for (int i=0; i<listSupplier.size(); i++)
                             {
-                                if (dataSupplier.getSelectedItem().toString().equals(supplierList.get(i).getNama_supplier()))
+                                if (dataSupplier.getSelectedItem().toString().equals(listSupplier.get(i).getNama_supplier()))
                                 {
-                                    selectIDSupplier = supplierList.get(i).getId_supplier();
-                                    txtAlamat.setText(supplierList.get(i).getAlamat_supplier());
-                                    txtNoTelp.setText(supplierList.get(i).getNoTelp_supplier());
+                                    selectedIDSupplier = listSupplier.get(i).getId_supplier();
+                                    txtAlamat.setText(listSupplier.get(i).getAlamat_supplier());
+                                    txtNoTelp.setText(listSupplier.get(i).getNoTelp_supplier());
                                 }
                             }
                         }
@@ -153,7 +153,7 @@ public class CreatePengadaan extends AppCompatActivity {
         btnTambah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                simpanPengadaan(selectIDSupplier);
+                simpanPengadaan(selectedIDSupplier);
 
                 Intent i = new Intent(getApplicationContext(), CreatePengadaanShow.class);
                 i.putExtra("nomorPO", nomorPemesanan);
@@ -174,9 +174,9 @@ public class CreatePengadaan extends AppCompatActivity {
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progressDialog.show();
 
-        pengadaan.enqueue(new Callback<Response>() {
+        pengadaan.enqueue(new Callback<com.petshopfix.API.Response>() {
             @Override
-            public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
+            public void onResponse(Call<com.petshopfix.API.Response> call, retrofit2.Response<com.petshopfix.API.Response> response) {
                 if (response.code() == 200)
                 {
                     progressDialog.dismiss();
@@ -185,7 +185,7 @@ public class CreatePengadaan extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<Response> call, Throwable t) {
+            public void onFailure(Call<com.petshopfix.API.Response> call, Throwable t) {
                 progressDialog.dismiss();
                 Toast.makeText(CreatePengadaan.this, t.getCause().toString(), Toast.LENGTH_SHORT).show();
             }

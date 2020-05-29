@@ -22,7 +22,7 @@
             android:id="@+id/view2"
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:background="@color/red" />
+            android:background="#D72C16"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -36,7 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:text="No : PO-2020-04-22-02"
+                android:text="No : PO-2020-09-10-03"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
 
@@ -45,7 +45,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="80dp"
-                android:text="Tanggal : 22 April 2020"
+                android:text="Tanggal : 29 April 2020"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -68,7 +68,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
-                android:text="PT Yamaha Indonesia"
+                android:text="PT Honda Semakin di Depan"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -79,7 +79,7 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
                 android:paddingTop="5dp"
-                android:text="Manisrenggo, Klaten"
+                android:text="Perumnas, Cirebon"
                 android:textColor="@color/white" />
 
             <TextView
@@ -88,21 +88,20 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
                 android:paddingTop="5dp"
-                android:text="082112426284"
+                android:text="08678978698"
                 android:textColor="@color/white" />
 
-<!--            <View-->
-<!--                android:id="@+id/view7"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="2dp"-->
-<!--                android:layout_marginTop="20dp"-->
-<!--                android:layout_marginBottom="5dp"-->
-<!--                android:background="@color/black_overlay" />-->
+            <View
+                android:id="@+id/view7"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="5dp"
+                android:background="@android:color/holo_red_dark" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
@@ -117,12 +116,12 @@
                     android:textSize="16sp" />
             </LinearLayout>
 
-<!--            <View-->
-<!--                android:id="@+id/view5"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="2dp"-->
-<!--                android:layout_marginTop="5dp"-->
-<!--                android:background="@color/black_overlay" />-->
+            <View
+                android:id="@+id/view5"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@android:color/holo_red_dark" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -136,7 +135,7 @@
                     android:id="@+id/btnBatalPesan"
                     android:layout_width="wrap_content"
                     android:layout_height="35dp"
-                    android:layout_marginLeft="90dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="10dp"
                     android:background="@drawable/roundedbutton"
@@ -165,10 +164,8 @@
                     android:textColor="#FDFDFD"
                     android:textSize="15sp"
                     android:textStyle="bold" />
-
             </LinearLayout>
         </LinearLayout>
-
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

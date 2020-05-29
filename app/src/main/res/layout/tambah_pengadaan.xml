@@ -23,23 +23,22 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
-<!--                <TextView-->
-<!--                    android:id="@+id/textView16"-->
-<!--                    android:layout_width="305dp"-->
-<!--                    android:layout_height="40dp"-->
-<!--                    android:gravity="center_vertical"-->
-<!--                    android:paddingLeft="15dp"-->
-<!--                    android:text="Produk Berhasil Masuk"-->
-<!--                    android:textColor="@android:color/black"-->
-<!--                    android:textSize="14sp" />-->
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="305dp"
+                    android:layout_height="40dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="15dp"
+                    android:text="Tambah Produk pada Pengadaan"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp" />
 
                 <ImageView
                     android:id="@+id/btnExit_tp"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="350dp"
+                    android:layout_marginLeft="40dp"
                     android:background="@drawable/ic_exit_foreground" />
-
             </LinearLayout>
 
             <View
@@ -61,18 +60,18 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-<!--                    <ImageView-->
-<!--                        android:id="@+id/gambar_tp"-->
-<!--                        android:layout_width="80dp"-->
-<!--                        android:layout_height="80dp"-->
-<!--                        android:background="@drawable/logoapp"-->
-<!--                        android:scaleType="centerCrop" />-->
+                    <ImageView
+                        android:id="@+id/gambar_tp"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@drawable/logoapp1"
+                        android:scaleType="centerCrop"/>
 
                     <TextView
                         android:id="@+id/stok_tp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="100dp"
+                        android:layout_marginTop="10dp"
                         android:text="Stok 11 / 10"
                         android:textAlignment="center"
                         android:textSize="12sp" />
@@ -155,9 +154,7 @@
                             android:inputType="textPersonName"
                             android:paddingLeft="5dp"
                             android:textSize="16sp" />
-
                     </LinearLayout>
-
                 </LinearLayout>
 
 <!--                <View-->
@@ -174,7 +171,6 @@
                     android:scaleType="fitStart"
                     android:scaleX="0.8"
                     android:scaleY="0.55" />
-
             </LinearLayout>
 
             <View
@@ -226,6 +222,6 @@
                 android:textAllCaps="false"
                 android:textColor="@color/black" />
         </LinearLayout>
-
     </androidx.cardview.widget.CardView>
+
 </LinearLayout>

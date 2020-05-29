@@ -33,6 +33,7 @@ import com.petshopfix.DAO.ProdukDAO;
 import com.petshopfix.R;
 import com.petshopfix.View.Pengadaan.DaftarPengadaan.ShowPengadaan;
 import com.petshopfix.View.Pengadaan.DaftarProdukPengadaanTertentu.UpdatePengadaanShow;
+import com.petshopfix.ZoomImage;
 
 import org.jetbrains.annotations.TestOnly;
 
@@ -78,12 +79,27 @@ public class CreatePengadaanAdapter extends RecyclerView.Adapter<CreatePengadaan
         holder.harga_produk.setText("Harga : Rp "+String.valueOf(produks.getHarga_produk() +"0"));
         holder.stok.setText("Stok "+String.valueOf(produks.getStok()) + " | " +String.valueOf(produks.getMin_stok()));
 
-//        String url = ApiClient.BASE_URL +  "produk/" + produks.getId_produk() + "/gambar";
-//        Glide.with(context)
-//                .load(url)
-//                .diskCacheStrategy(DiskCacheStrategy.NONE)
-//                .skipMemoryCache(true);
-//                .into(holder.gambar);
+        String url = ApiClient.BASE_URL +  "produk/" + produks.getId_produk() + "/gambar";
+        Glide.with(context)
+                .load(url)
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                .skipMemoryCache(true)
+                .into(holder.gambar);
+
+        holder.gambar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle produk = new Bundle();
+
+                produk.putString("id_produk", produks.getId_produk());
+                produk.putString("nama_produk", produks.getNama_produk());
+                produk.putString("status", "produk");
+
+                Intent i = new Intent(context, ZoomImage.class);
+                i.putExtras(produk);
+                context.startActivity(i);
+            }
+        });
 
         holder.btnTambah.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,7 +111,7 @@ public class CreatePengadaanAdapter extends RecyclerView.Adapter<CreatePengadaan
                     @Override
                     public void onResponse(Call<com.petshopfix.API.Response> call, retrofit2.Response<com.petshopfix.API.Response> response) {
                         status = "Tidak ada";
-                        DetailPengadaanDAO detailPengadaanDAO = null;
+                        DetailPengadaanDAO detailPengadaan = null;
 
                         if (!response.body().getDetailPengadaan().isEmpty() && response.code()==200)
                         {
@@ -103,12 +119,12 @@ public class CreatePengadaanAdapter extends RecyclerView.Adapter<CreatePengadaan
                             {
                                 if (dtp.getId_produk().equals(produks.getId_produk()))
                                 {
-                                    detailPengadaanDAO = dtp;
+                                    detailPengadaan = dtp;
                                     status = "Ada";
                                 }
                             }
                         }
-                        tambahPengadaan(produks,detailPengadaanDAO);;
+                        createPengadaan(produks,detailPengadaan);
                     }
 
                     @Override
@@ -127,7 +143,7 @@ public class CreatePengadaanAdapter extends RecyclerView.Adapter<CreatePengadaan
     }
 
     public class CreatePengadaanViewHolder extends RecyclerView.ViewHolder{
-//        private ImageView gambar;
+        private ImageView gambar;
         private TextView nama_produk, harga_produk, stok;
         private Button btnTambah;
 
@@ -136,7 +152,7 @@ public class CreatePengadaanAdapter extends RecyclerView.Adapter<CreatePengadaan
             nama_produk = (TextView) itemView.findViewById(R.id.txt_nama);
             harga_produk = (TextView) itemView.findViewById(R.id.txt_harga);
             stok = (TextView) itemView.findViewById(R.id.txt_stok);
-//            gambar = (ImageView) itemView.findViewById(R.id.txt_gambarpg);
+            gambar = (ImageView) itemView.findViewById(R.id.txt_gambarpg);
             btnTambah = (Button) itemView.findViewById(R.id.btn_tambah);
         }
     }
@@ -187,16 +203,16 @@ public class CreatePengadaanAdapter extends RecyclerView.Adapter<CreatePengadaan
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progressDialog.show();
 
-        pengadaan.enqueue(new Callback<Response>() {
+        pengadaan.enqueue(new Callback<com.petshopfix.API.Response>() {
             @Override
-            public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
+            public void onResponse(Call<com.petshopfix.API.Response> call, retrofit2.Response<com.petshopfix.API.Response> response) {
                 System.out.println(response.body());
                 if (response.code() == 200)
                 {
                     progressDialog.dismiss();
                     System.out.println("Success");
 
-                    if (cek.equals("Update Pengadaan"))
+                    if (cek.equals("Ubah Pengadaan"))
                     {
                         Intent i = new Intent(context, UpdatePengadaanShow.class);
                         i.putExtra("nomorPO", nomorPO);
@@ -209,7 +225,7 @@ public class CreatePengadaanAdapter extends RecyclerView.Adapter<CreatePengadaan
             }
 
             @Override
-            public void onFailure(Call<Response> call, Throwable t) {
+            public void onFailure(Call<com.petshopfix.API.Response> call, Throwable t) {
                 progressDialog.dismiss();
                 Toast.makeText(context, t.getCause().toString(), Toast.LENGTH_SHORT).show();
             }
@@ -221,7 +237,7 @@ public class CreatePengadaanAdapter extends RecyclerView.Adapter<CreatePengadaan
         if (status.equals("Tidak Ada"))
         {
             ApiDetailPengadaan apiService = ApiClient.getClient().create(ApiDetailPengadaan.class);
-            Call<Response> detailPengadaan = apiService.createDetailPengadaan(nomorPO, id_produk, satuan, jumlah_po);
+            Call<com.petshopfix.API.Response> detailPengadaan = apiService.createDetailPengadaan(nomorPO, id_produk, satuan, jumlah_po);
 
             final ProgressDialog progressDialog;
             progressDialog = new ProgressDialog(context);
@@ -229,9 +245,9 @@ public class CreatePengadaanAdapter extends RecyclerView.Adapter<CreatePengadaan
             progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
             progressDialog.show();
 
-            detailPengadaan.enqueue(new Callback<Response>() {
+            detailPengadaan.enqueue(new Callback<com.petshopfix.API.Response>() {
                 @Override
-                public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
+                public void onResponse(Call<com.petshopfix.API.Response> call, retrofit2.Response<com.petshopfix.API.Response> response) {
                     if(response.code() == 200)
                     {
                         progressDialog.dismiss();
@@ -240,7 +256,7 @@ public class CreatePengadaanAdapter extends RecyclerView.Adapter<CreatePengadaan
                 }
 
                 @Override
-                public void onFailure(Call<Response> call, Throwable t) {
+                public void onFailure(Call<com.petshopfix.API.Response> call, Throwable t) {
                     progressDialog.dismiss();
                 }
             });
@@ -248,7 +264,7 @@ public class CreatePengadaanAdapter extends RecyclerView.Adapter<CreatePengadaan
         else
         {
             ApiDetailPengadaan apiService = ApiClient.getClient().create(ApiDetailPengadaan.class);
-            Call<Response> detailPengadaan = apiService.updateDetailPengadaan(nomorPO, id_produk, satuan, jumlah_po);
+            Call<com.petshopfix.API.Response> detailPengadaan = apiService.updateDetailPengadaan(nomorPO, id_produk, satuan, jumlah_po);
 
             final ProgressDialog progressDialog;
             progressDialog = new ProgressDialog(context);
@@ -256,9 +272,9 @@ public class CreatePengadaanAdapter extends RecyclerView.Adapter<CreatePengadaan
             progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
             progressDialog.show();
 
-            detailPengadaan.enqueue(new Callback<Response>() {
+            detailPengadaan.enqueue(new Callback<com.petshopfix.API.Response>() {
                 @Override
-                public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
+                public void onResponse(Call<com.petshopfix.API.Response> call, retrofit2.Response<com.petshopfix.API.Response> response) {
                     if(response.code() == 200)
                     {
                         progressDialog.dismiss();
@@ -267,7 +283,7 @@ public class CreatePengadaanAdapter extends RecyclerView.Adapter<CreatePengadaan
                 }
 
                 @Override
-                public void onFailure(Call<Response> call, Throwable t) {
+                public void onFailure(Call<com.petshopfix.API.Response> call, Throwable t) {
                     progressDialog.dismiss();
                     Toast.makeText(context, t.getCause().toString(), Toast.LENGTH_SHORT).show();
                 }
@@ -278,7 +294,7 @@ public class CreatePengadaanAdapter extends RecyclerView.Adapter<CreatePengadaan
     private void hapusDetailPengadaan(String nomorPO, String id_produk)
     {
         ApiDetailPengadaan apiService = ApiClient.getClient().create(ApiDetailPengadaan.class);
-        Call<Response> detailPengadaan = apiService.batalProdukPengadaan(nomorPO, id_produk);
+        Call<com.petshopfix.API.Response> detailPengadaan = apiService.batalProdukPengadaan(nomorPO, id_produk);
 
         final ProgressDialog progressDialog;
         progressDialog = new ProgressDialog(context);
@@ -286,9 +302,9 @@ public class CreatePengadaanAdapter extends RecyclerView.Adapter<CreatePengadaan
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progressDialog.show();
 
-        detailPengadaan.enqueue(new Callback<Response>() {
+        detailPengadaan.enqueue(new Callback<com.petshopfix.API.Response>() {
             @Override
-            public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
+            public void onResponse(Call<com.petshopfix.API.Response> call, retrofit2.Response<com.petshopfix.API.Response> response) {
                 if(response.code() == 200)
                 {
                     progressDialog.dismiss();
@@ -297,7 +313,7 @@ public class CreatePengadaanAdapter extends RecyclerView.Adapter<CreatePengadaan
             }
 
             @Override
-            public void onFailure(Call<Response> call, Throwable t) {
+            public void onFailure(Call<com.petshopfix.API.Response> call, Throwable t) {
                 progressDialog.dismiss();
                 Toast.makeText(context, t.getCause().toString(), Toast.LENGTH_SHORT).show();
             }
@@ -307,11 +323,11 @@ public class CreatePengadaanAdapter extends RecyclerView.Adapter<CreatePengadaan
     private void hitungTotalBiaya(String nomorPO)
     {
         ApiDetailPengadaan apiService = ApiClient.getClient().create(ApiDetailPengadaan.class);
-        Call<Response> detailPengadaan = apiService.tampilPengadaan(nomorPO);
+        Call<com.petshopfix.API.Response> detailPengadaan = apiService.tampilPengadaan(nomorPO);
 
-        detailPengadaan.enqueue(new Callback<Response>() {
+        detailPengadaan.enqueue(new Callback<com.petshopfix.API.Response>() {
             @Override
-            public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
+            public void onResponse(Call<com.petshopfix.API.Response> call, retrofit2.Response<com.petshopfix.API.Response> response) {
                 if(!response.body().getDetailPengadaan().isEmpty())
                 {
                     totalBiaya = 0.0;
@@ -326,13 +342,13 @@ public class CreatePengadaanAdapter extends RecyclerView.Adapter<CreatePengadaan
             }
 
             @Override
-            public void onFailure(Call<Response> call, Throwable t) {
+            public void onFailure(Call<com.petshopfix.API.Response> call, Throwable t) {
                 Toast.makeText(context, t.getCause().toString(), Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-    public void tambahPengadaan(ProdukDAO produks, DetailPengadaanDAO detail)
+    public void createPengadaan(ProdukDAO produks, DetailPengadaanDAO dtp)
     {
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         View view = layoutInflater.inflate(R.layout.tambah_pengadaan, null);
@@ -344,7 +360,7 @@ public class CreatePengadaanAdapter extends RecyclerView.Adapter<CreatePengadaan
         ImageView btnPlus = view.findViewById(R.id.plus_tp);
         Button btnSelesai = view.findViewById(R.id.btnSelesai_tp);
         Button btnTambah = view.findViewById(R.id.btnTambah_tp);
-//        ImageView txtGambar = view.findViewById(R.id.gambar_tp);
+        ImageView txtGambar = view.findViewById(R.id.gambar_tp);
         TextView txtNama = view.findViewById(R.id.nama_tp);
         TextView txtHarga = view.findViewById(R.id.harga_tp);
         TextView txtStok = view.findViewById(R.id.stok_tp);
@@ -352,7 +368,7 @@ public class CreatePengadaanAdapter extends RecyclerView.Adapter<CreatePengadaan
         EditText txtJumlah = view.findViewById(R.id.jumlah_tp);
         EditText txtSatuan = view.findViewById(R.id.satuan_tp);
 
-        if (cek.equals("Update Pengadaan"))
+        if (cek.equals("Ubah Pengadaan"))
             btnSelesai.setText("Pengadaan Tersimpan");
 
         txtNama.setText(produks.getNama_produk());
@@ -368,10 +384,17 @@ public class CreatePengadaanAdapter extends RecyclerView.Adapter<CreatePengadaan
         }
         else
         {
-            txtSatuan.setText(detail.getSatuan());
-            txtJumlah.setText(String.valueOf(detail.getJumlah_po()));
-            txtSubtotal.setText(String.valueOf(detail.getHarga_produk()*detail.getJumlah_po())+"0");
+            txtSatuan.setText(dtp.getSatuan());
+            txtJumlah.setText(String.valueOf(dtp.getJumlah_po()));
+            txtSubtotal.setText(String.valueOf(dtp.getHarga_produk()*dtp.getJumlah_po())+"0");
         }
+
+        String url = ApiClient.BASE_URL + "produk/" + produks.getId_produk() + "/gambar";
+        Glide.with(context)
+                .load(url)
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                .skipMemoryCache(true)
+                .into(txtGambar);
 
         txtJumlah.addTextChangedListener(new TextWatcher() {
             @Override
@@ -454,7 +477,6 @@ public class CreatePengadaanAdapter extends RecyclerView.Adapter<CreatePengadaan
                 idP = produks.getId_produk();
                 satuan = txtSatuan.getText().toString();
                 jumlah_po = Integer.parseInt(txtJumlah.getText().toString());
-
 
                 simpanDetailPengadaan(nomorPO, idP, satuan, jumlah_po);
 

@@ -25,6 +25,7 @@ import com.petshopfix.API.Interface.ApiDetailPengadaan;
 import com.petshopfix.API.Response;
 import com.petshopfix.DAO.DetailPengadaanDAO;
 import com.petshopfix.R;
+import com.petshopfix.ZoomImage;
 
 import java.util.List;
 
@@ -55,33 +56,33 @@ public class UpdatePengadaanAdapter extends RecyclerView.Adapter<UpdatePengadaan
     public void onBindViewHolder(@NonNull tambahPengadaanViewHolder holder, int position) {
         final DetailPengadaanDAO dtp = listDTP.get(position);
 
-        holder.namaProduk.setText(dtp.getNama_produk());
-        holder.harga.setText("Rp "+String.valueOf(dtp.getHarga_produk() +"0"));
+        holder.nama_produk.setText(dtp.getNama_produk());
+        holder.harga_produk.setText("Rp "+String.valueOf(dtp.getHarga_produk() +"0"));
         holder.stok.setText("Stok "+String.valueOf(dtp.getStok()) + " | " +String.valueOf(dtp.getMin_stok()));
         holder.satuan.setText(dtp.getSatuan());
-        holder.jumlah.setText(String.valueOf(dtp.getJumlah_po()));
+        holder.jumlah_po.setText(String.valueOf(dtp.getJumlah_po()));
 
-//        String url = ApiClient.BASE_URL +  "produk/" + dtp.getIdProduk() + "/gambar";
-//        Glide.with(context)
-//                .load(url)
-//                .diskCacheStrategy(DiskCacheStrategy.NONE)
-//                .skipMemoryCache(true)
-//                .into(holder.gambar);
-//
-//        holder.gambar.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Bundle produk = new Bundle();
-//
-//                produk.putString("idProduk", dtp.getIdProduk());
-//                produk.putString("namaProduk",dtp.getNamaProduk());
-//                produk.putString("status", "produk");
-//
-//                Intent i = new Intent(context, ZoomImage.class);
-//                i.putExtras(produk);
-//                context.startActivity(i);
-//            }
-//        });
+        String url = ApiClient.BASE_URL +  "produk/" + dtp.getId_produk() + "/gambar";
+        Glide.with(context)
+                .load(url)
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                .skipMemoryCache(true)
+                .into(holder.gambar);
+
+        holder.gambar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle produk = new Bundle();
+
+                produk.putString("id_produk", dtp.getId_produk());
+                produk.putString("nama_produk",dtp.getNama_produk());
+                produk.putString("status", "produk");
+
+                Intent i = new Intent(context, ZoomImage.class);
+                i.putExtras(produk);
+                context.startActivity(i);
+            }
+        });
 
         holder.btnHapus.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,24 +94,24 @@ public class UpdatePengadaanAdapter extends RecyclerView.Adapter<UpdatePengadaan
         holder.btnMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int minus = Integer.parseInt(holder.jumlah.getText().toString()) - 1;
+                int minus = Integer.parseInt(holder.jumlah_po.getText().toString()) - 1;
                 listDTP.get(position).setJumlah_po(minus);
                 if(minus < 1)
-                    holder.jumlah.setText("1");
+                    holder.jumlah_po.setText("1");
                 else
-                    holder.jumlah.setText(String.valueOf(minus));
+                    holder.jumlah_po.setText(String.valueOf(minus));
             }
         });
 
         holder.btnPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int plus = Integer.parseInt(holder.jumlah.getText().toString()) + 1;
+                int plus = Integer.parseInt(holder.jumlah_po.getText().toString()) + 1;
                 listDTP.get(position).setJumlah_po(plus);
                 if(plus < 1)
-                    holder.jumlah.setText("1");
+                    holder.jumlah_po.setText("1");
                 else
-                    holder.jumlah.setText(String.valueOf(plus));
+                    holder.jumlah_po.setText(String.valueOf(plus));
             }
         });
 
@@ -139,18 +140,18 @@ public class UpdatePengadaanAdapter extends RecyclerView.Adapter<UpdatePengadaan
 
     public class tambahPengadaanViewHolder extends RecyclerView.ViewHolder{
         private ImageView gambar;
-        private TextView namaProduk, harga, stok;
-        private EditText satuan, jumlah;
+        private TextView nama_produk, harga_produk, stok;
+        private EditText satuan, jumlah_po;
         private ImageView btnHapus, btnPlus, btnMinus;
 
         public tambahPengadaanViewHolder(@NonNull View itemView) {
             super(itemView);
-            namaProduk = (TextView) itemView.findViewById(R.id.nama_up);
-            harga = (TextView) itemView.findViewById(R.id.harga_up);
+            nama_produk = (TextView) itemView.findViewById(R.id.nama_up);
+            harga_produk = (TextView) itemView.findViewById(R.id.harga_up);
             stok = (TextView) itemView.findViewById(R.id.stok_up);
-//            gambar = (ImageView) itemView.findViewById(R.id.gambar_up);
+            gambar = (ImageView) itemView.findViewById(R.id.gambar_up);
             satuan = (EditText) itemView.findViewById(R.id.satuan_up);
-            jumlah = (EditText) itemView.findViewById(R.id.jumlah_up);
+            jumlah_po = (EditText) itemView.findViewById(R.id.jumlah_up);
             btnHapus = (ImageView) itemView.findViewById(R.id.hapus_up);
             btnMinus = (ImageView) itemView.findViewById(R.id.min_up);
             btnPlus = (ImageView) itemView.findViewById(R.id.plus_up);
@@ -164,13 +165,13 @@ public class UpdatePengadaanAdapter extends RecyclerView.Adapter<UpdatePengadaan
 
         final ProgressDialog progressDialog;
         progressDialog = new ProgressDialog(context);
-        progressDialog.setMessage("loading....");
+        progressDialog.setMessage("Loading....");
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progressDialog.show();
 
-        dtpengadaan.enqueue(new Callback<Response>() {
+        dtpengadaan.enqueue(new Callback<com.petshopfix.API.Response>() {
             @Override
-            public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
+            public void onResponse(Call<com.petshopfix.API.Response> call, retrofit2.Response<com.petshopfix.API.Response> response) {
                 if(response.code() == 200)
                 {
                     progressDialog.dismiss();
@@ -181,7 +182,7 @@ public class UpdatePengadaanAdapter extends RecyclerView.Adapter<UpdatePengadaan
             }
 
             @Override
-            public void onFailure(Call<Response> call, Throwable t) {
+            public void onFailure(Call<com.petshopfix.API.Response> call, Throwable t) {
                 progressDialog.dismiss();
                 Toast.makeText(context, t.getCause().toString(), Toast.LENGTH_SHORT).show();
             }

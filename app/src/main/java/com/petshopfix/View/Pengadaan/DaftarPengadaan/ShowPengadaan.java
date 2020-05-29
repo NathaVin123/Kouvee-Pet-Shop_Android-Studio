@@ -56,17 +56,18 @@ public class ShowPengadaan extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
-    public void setPengadaan() {
+    public void setPengadaan()
+    {
         judul.setText("Daftar Pengadaan Produk");
         ApiPengadaan apiService = ApiClient.getClient().create(ApiPengadaan.class);
         Call<Response> pengadaan = apiService.getAll();
 
         final ProgressDialog progressDialog;
         progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("loading....");
+        progressDialog.setMessage("Loading...");
         progressDialog.setTitle("Menampilkan Daftar Pengadaan Produk");
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-        // show it
+        //show it
         progressDialog.show();
 
         pengadaan.enqueue(new Callback<Response>() {
@@ -75,7 +76,7 @@ public class ShowPengadaan extends AppCompatActivity {
                 progressDialog.dismiss();
                 if(response.body().getPengadaan().isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(), "Belum ada transaksi pengadaan produk",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Belum ada Transaksi Pengadaan Produk", Toast.LENGTH_SHORT).show();
                 }
                 listPengadaaan.addAll(response.body().getPengadaan());
                 adapter.notifyDataSetChanged();
@@ -84,10 +85,11 @@ public class ShowPengadaan extends AppCompatActivity {
             @Override
             public void onFailure(Call<Response> call, Throwable t) {
                 progressDialog.dismiss();
-                Toast.makeText(getApplicationContext(), t.getMessage(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
+
 
     @Override
     public boolean onSupportNavigateUp() {

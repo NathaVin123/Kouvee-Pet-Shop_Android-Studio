@@ -28,6 +28,7 @@
     <string name="id_supplier">ID Supplier</string>
     <string name="tambah_layanan">TAMBAH LAYANAN</string>
     <string name="title_activity_detail_pengadaan">detailPengadaan</string>
+
     <string-array name="sortirPengadaan">
         <item>Sortir</item>
         <item>Harga Termahal</item>

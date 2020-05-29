@@ -29,7 +29,6 @@ public class DetailPengadaanDAO {
     private int min_stok;
 
     public DetailPengadaanDAO() {
-
     };
 
     public String getNomorPO() {
