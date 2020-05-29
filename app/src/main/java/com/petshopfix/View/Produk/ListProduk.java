@@ -9,8 +9,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,6 +21,7 @@ import android.widget.Toast;
 import com.petshopfix.API.ApiClient;
 import com.petshopfix.API.Interface.ApiProduk;
 import com.petshopfix.API.Response;
+import com.petshopfix.Activity.HomeActivity;
 import com.petshopfix.Activity.Produk.MenuProduk;
 import com.petshopfix.DAO.ProdukDAO;
 import com.petshopfix.R;
@@ -28,7 +32,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 
-public class ListProduk extends AppCompatActivity implements SearchView.OnQueryTextListener {
+public class ListProduk extends AppCompatActivity  {
 
     private RecyclerView recyclerView;
     private ProdukAdapter adapter;
@@ -60,6 +64,22 @@ public class ListProduk extends AppCompatActivity implements SearchView.OnQueryT
         getSupportActionBar().setCustomView(R.layout.actionbar);
         judul =(TextView)findViewById(getResources().getIdentifier("action_bar_title", "id", getPackageName()));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        EditText searchView = (EditText) findViewById(R.id.txtSearch);
+        searchView.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                adapter.getFilter().filter(s.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
     }
 
     public void setProduk() {
@@ -68,6 +88,14 @@ public class ListProduk extends AppCompatActivity implements SearchView.OnQueryT
             judul.setText("Daftar Produk");
             ApiProduk apiService = ApiClient.getClient().create(ApiProduk.class);
             Call<Response> produks = apiService.getAll();
+
+            response(produks);
+        }
+        else if(status.equals("minimal"))
+        {
+            judul.setText("Daftar Stok Min Produk");
+            ApiProduk apiService = ApiClient.getClient().create(ApiProduk.class);
+            Call<Response> produks = apiService.getMinimal();
 
             response(produks);
         }
@@ -118,38 +146,27 @@ public class ListProduk extends AppCompatActivity implements SearchView.OnQueryT
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.toolbarmenu,menu);
-
-        MenuItem menuItem = menu.findItem(R.id.txtSearch);
-        SearchView searchView = (SearchView) menuItem.getActionView();
-        searchView.setOnQueryTextListener(this);
-
-        return true;
-    }
-
-    @Override
-    public boolean onQueryTextSubmit(String query) {
-        String userInput = query.toLowerCase();
-        adapter.getFilter().filter(userInput);
-        return true;
-    }
-
-    @Override
-    public boolean onQueryTextChange(String newText) {
-        String userInput = newText.toLowerCase();
-        adapter.getFilter().filter(userInput);
-        return true;
-    }
-
-    @Override
     public boolean onSupportNavigateUp() {
-        startActivity(new Intent(getApplicationContext(), MenuProduk.class));
+        if (status.equals("minimal"))
+        {
+            Intent i = new Intent(getApplicationContext(), HomeActivity.class);
+            i.putExtra("status", "pengadaan" );
+            startActivity(i);
+        }
+        else
+            startActivity(new Intent(getApplicationContext(), MenuProduk.class));
         return true;
     }
 
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(getApplicationContext(), MenuProduk.class));
+        if (status.equals("minimal"))
+        {
+            Intent i = new Intent(getApplicationContext(), HomeActivity.class);
+            i.putExtra("status", "pengadaan" );
+            startActivity(i);
+        }
+        else
+            startActivity(new Intent(getApplicationContext(), MenuProduk.class));
     }
 }
