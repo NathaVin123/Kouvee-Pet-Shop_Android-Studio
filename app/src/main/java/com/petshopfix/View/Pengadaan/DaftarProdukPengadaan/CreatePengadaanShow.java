@@ -150,7 +150,7 @@ public class CreatePengadaanShow extends AppCompatActivity {
         final ProgressDialog progressDialog;
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Loading....");
-        progressDialog.setTitle("Menampilkan Daftar com.petshopfix.Activity.Penjualan.Produk");
+        progressDialog.setTitle("Menampilkan Daftar Produk");
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         // show it
         progressDialog.show();

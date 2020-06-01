@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.petshopfix">
 
     <application
@@ -14,8 +15,10 @@
         <activity android:name=".Activity.Penjualan.Produk.PilihCustomer" />
         <activity android:name=".View.PenjualanProduk.CartTransaksi.CartProdukShow" />
         <activity android:name=".View.PenjualanProduk.CartTransaksi.CartProdukAdapter" />
-        <activity android:name=".View.PenjualanProduk.TambahTransaksi.TambahProdukPenjualanShow" />
-        <activity android:name=".View.PenjualanProduk.TambahTransaksi.TambahProdukPenjualanAdapter" />
+        <activity android:name=".View.PenjualanProduk.TambahTransaksi.TambahProdukPenjualanShow"
+            tools:ignore="DuplicateActivity"/>
+        <activity android:name=".View.PenjualanProduk.TambahTransaksi.TambahProdukPenjualanAdapter"
+            tools:ignore="DuplicateActivity"/>
         <activity android:name=".View.PenjualanProduk.TampilTransaksi.TampilTransaksiProdukShow" />
         <activity android:name=".View.PenjualanProduk.TampilTransaksi.TampilTransaksiProdukAdapter" />
         <activity android:name=".Activity.PenjualanLayanan.MenuPenjualanLayanan" />
@@ -29,6 +32,17 @@
         <activity android:name=".View.Pengadaan.DaftarProdukPengadaan.CreatePengadaanShow" />
         <activity android:name=".Activity.Pengadaan.DetailPengadaan" />
         <activity android:name=".Activity.Pengadaan.CreatePengadaan" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.petshopfix"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
         <activity android:name=".Fragments.PengadaanFragment" />
         <activity android:name=".Fragments.PenjualanFragment" />
         <activity android:name=".View.Hewan.ListHewan" />
@@ -93,7 +107,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
 </manifest>
