@@ -37,6 +37,9 @@ public class TransaksiProdukDAO {
     @SerializedName("nama_jenis")
     private String nama_jenis;
 
+    @SerializedName("alamat_customer")
+    private String alamat_customer;
+
     @SerializedName("createLog_at")
     private String createLog_at;
 
@@ -95,5 +98,9 @@ public class TransaksiProdukDAO {
 
     public String getNama_jenis() {
         return nama_jenis;
+    }
+
+    public String getAlamat_customer() {
+        return alamat_customer;
     }
 }

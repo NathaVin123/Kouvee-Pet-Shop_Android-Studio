@@ -18,16 +18,26 @@ public interface ApiTransaksiProduk {
     @GET("transaksiProduk/getNoTransaksi")
     Call<String> getNoTransaksi();
 
+    @GET("transaksiProduk/cari/{cari}")
+    Call<Response> getTransaksiProduk(@Path("cari") String no_transaksi);
+
     @POST("transaksiProduk")
     @FormUrlEncoded
-    Call<Response> createPenjualanProduk(@Field("id_customerService") String id_customerService);
+    Call<Response> createPenjualanProduk(@Field("id_customer") String id_customer,
+                                         @Field("totalBiaya") Double totalBiaya,
+                                         @Field("id_customerService") String id_customerService);
 
     @POST("transaksiProduk/{id}")
     @FormUrlEncoded
-    Call<Response> updatePenjualanProduk(@Path("id") String nomorPO,
+    Call<Response> updatePenjualanProduk(@Path("id") String no_transaksi,
                                          @Field("totalBiaya") Double totalBiaya,
-                                         @Field("idCustomer") int id_customer,
+                                         @Field("idCustomer") String id_customer,
                                          @Field("id_customerService") String id_customerService);
+
+    @POST("transaksiProduk/updateTotalBiaya/{id}")
+    @FormUrlEncoded
+    Call<Response> updateTotalBiayaProduk(@Path("id") String no_transaksi,
+                                          @Field("totalBiaya") Double totalBiaya);
 
     @DELETE("transaksiProduk/{id}")
     Call<Response> batalPenjualanProduk(@Path("id") String no_transaksi);

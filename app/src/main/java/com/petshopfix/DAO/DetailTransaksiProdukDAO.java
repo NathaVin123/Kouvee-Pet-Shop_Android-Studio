@@ -47,4 +47,8 @@ public class DetailTransaksiProdukDAO {
     public int getStok() {
         return stok;
     }
+
+    public void setJumlah(int jumlah){
+        this.jumlah = jumlah;
+    }
 }

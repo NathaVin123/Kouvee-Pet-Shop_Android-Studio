@@ -67,13 +67,13 @@ public class Response {
     @Expose
     private List<DetailPengadaanDAO> detailPengadaan;
 
-//    @SerializedName("transaksiProduk")
-//    @Expose
-//    private List<TransaksiProdukDAO> transaksiProduk;
-//
-//    @SerializedName("detailProduk")
-//    @Expose
-//    private List<DetailTransaksiProdukDAO> detailProduk;
+    @SerializedName("transaksiProduk")
+    @Expose
+    private List<TransaksiProdukDAO> transaksiProduk;
+
+    @SerializedName("detailProduk")
+    @Expose
+    private List<DetailTransaksiProdukDAO> detailProduk;
 
 //    @SerializedName("transaksiLayanan")
 //    @Expose
@@ -132,11 +132,11 @@ public class Response {
         return detailPengadaan;
     }
 
-//    public List<TransaksiProdukDAO> getTransaksiProduk() {
-//        return transaksiProduk;
-//    }
-//
-//    public List<DetailTransaksiProdukDAO> getDetailProduk() {
-//        return detailProduk;
-//    }
+    public List<TransaksiProdukDAO> getTransaksiProduk() {
+        return transaksiProduk;
+    }
+
+    public List<DetailTransaksiProdukDAO> getDetailProduk() {
+        return detailProduk;
+    }
 }

@@ -15,7 +15,11 @@ public interface ApiDetailProduk {
     Call<Response> getAll();
 
     @GET("detailProduk/tampil/{id}")
-    Call<Response> tampilDTProduk(@Path("id") String no_transaksi);
+    Call<Response> tampilDetailProduk(@Path("id") String no_transaksi);
+
+    @GET("detailProduk/cari")
+    Call<Response> cariDetailProduk(@Field("no_transaksi") String no_transaksi,
+                                    @Field("id_produk") String id_produk);
 
     @POST("detailProduk")
     @FormUrlEncoded
