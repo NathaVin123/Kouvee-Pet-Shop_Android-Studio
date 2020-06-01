@@ -65,7 +65,7 @@ public class ListLayanan extends AppCompatActivity implements SearchView.OnQuery
     public void setLayanan() {
         if(status.equals("getAll"))
         {
-            judul.setText("Daftar Layanan");
+            judul.setText("Daftar com.petshopfix.Activity.Penjualan.Layanan");
             ApiLayanan apiService = ApiClient.getClient().create(ApiLayanan.class);
             Call<Response> layanans = apiService.getAll();
 
@@ -73,7 +73,7 @@ public class ListLayanan extends AppCompatActivity implements SearchView.OnQuery
         }
         else
         {
-            judul.setText("Daftar Layanan Di Hapus");
+            judul.setText("Daftar com.petshopfix.Activity.Penjualan.Layanan Di Hapus");
             ApiLayanan apiService = ApiClient.getClient().create(ApiLayanan.class);
             Call<Response> layanans = apiService.getSoftDelete();
 
@@ -86,9 +86,9 @@ public class ListLayanan extends AppCompatActivity implements SearchView.OnQuery
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Loading....");
         if(status.equals("getAll"))
-            progressDialog.setTitle("Menampilkan Daftar Layanan");
+            progressDialog.setTitle("Menampilkan Daftar com.petshopfix.Activity.Penjualan.Layanan");
         else
-            progressDialog.setTitle("Menampilkan Daftar Layanan Dihapus");
+            progressDialog.setTitle("Menampilkan Daftar com.petshopfix.Activity.Penjualan.Layanan Dihapus");
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
 
         progressDialog.show();

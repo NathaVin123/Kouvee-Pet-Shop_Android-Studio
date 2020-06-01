@@ -78,7 +78,7 @@ public class UpdateLayanan extends AppCompatActivity {
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.actionbar);
         TextView judul = (TextView) findViewById(getResources().getIdentifier("action_bar_title", "id", getPackageName()));
-        judul.setText("Update Layanan");
+        judul.setText("Update com.petshopfix.Activity.Penjualan.Layanan");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
@@ -91,7 +91,7 @@ public class UpdateLayanan extends AppCompatActivity {
             public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
                 if (response.body().getUkuran().isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(), "Data Layanan Kosong",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Data com.petshopfix.Activity.Penjualan.Layanan Kosong",Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
@@ -176,7 +176,7 @@ public class UpdateLayanan extends AppCompatActivity {
                     Call<Response> layanan = apiService.updateLayanan(id_layanan, nama_layanan, harga_layanan, id_ukuran, updateLogId);
 
                     progressDialog.setMessage("loading....");
-                    progressDialog.setTitle("Mengubah Data Layanan");
+                    progressDialog.setTitle("Mengubah Data com.petshopfix.Activity.Penjualan.Layanan");
                     progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
 
                     progressDialog.show();
@@ -189,7 +189,7 @@ public class UpdateLayanan extends AppCompatActivity {
                                     Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_SHORT).show();
                                 else
                                 {
-                                    Toast.makeText(getApplicationContext(),"Update Data Layanan Berhasil.", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(),"Update Data com.petshopfix.Activity.Penjualan.Layanan Berhasil.", Toast.LENGTH_SHORT).show();
                                     Intent i = new Intent(getApplicationContext(), ListLayanan.class);
                                     i.putExtra("status","getAll" );
                                     startActivity(i);

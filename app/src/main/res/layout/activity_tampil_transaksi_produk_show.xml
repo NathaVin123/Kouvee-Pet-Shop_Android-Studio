@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D72C16"
+    android:orientation="vertical"
+    tools:context=".View.PenjualanProduk.TampilTransaksi.TampilTransaksiProdukShow">
+
+    <EditText
+        android:id="@+id/txtSearch"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/roundedbutton"
+        android:drawableLeft="@drawable/ic_search"
+        android:drawableTint="@color/black"
+        android:ems="10"
+        android:hint="Cari Transaksi Produk"
+        android:imeOptions="actionSearch"
+        android:inputType="textPersonName"
+        android:paddingLeft="10dp"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:textColor="@color/black"
+        android:textSize="14sp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#D72C16"/>
+
+</LinearLayout>

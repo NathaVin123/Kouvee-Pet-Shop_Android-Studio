@@ -76,7 +76,7 @@ public class DetailLayanan extends AppCompatActivity {
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.actionbar);
         TextView judul = (TextView) findViewById(getResources().getIdentifier("action_bar_title", "id", getPackageName()));
-        judul.setText("Detail Layanan");
+        judul.setText("Detail com.petshopfix.Activity.Penjualan.Layanan");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
@@ -102,7 +102,7 @@ public class DetailLayanan extends AppCompatActivity {
                 final ProgressDialog progressDialog;
                 progressDialog = new ProgressDialog(DetailLayanan.this);
                 progressDialog.setMessage("Loading....");
-                progressDialog.setTitle("Memulihkan Data Layanan");
+                progressDialog.setTitle("Memulihkan Data com.petshopfix.Activity.Penjualan.Layanan");
                 progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
                 // show it
                 progressDialog.show();
@@ -111,7 +111,7 @@ public class DetailLayanan extends AppCompatActivity {
                     public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
                         progressDialog.dismiss();
                         if (response.code() == 200) {
-                            Toast.makeText(getApplicationContext(), "Data Layanan Berhasil Dipulihkan", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Data com.petshopfix.Activity.Penjualan.Layanan Berhasil Dipulihkan", Toast.LENGTH_SHORT).show();
                             Intent i = new Intent(getApplicationContext(), ListLayanan.class);
                             i.putExtra("status", status);
                             startActivity(i);
@@ -129,7 +129,7 @@ public class DetailLayanan extends AppCompatActivity {
         btnHapus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                builder.setMessage("Anda Yakin Ingin Menghapus Layanan ?");
+                builder.setMessage("Anda Yakin Ingin Menghapus com.petshopfix.Activity.Penjualan.Layanan ?");
                 builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -139,7 +139,7 @@ public class DetailLayanan extends AppCompatActivity {
                         final ProgressDialog progressDialog;
                         progressDialog = new ProgressDialog(DetailLayanan.this);
                         progressDialog.setMessage("loading....");
-                        progressDialog.setTitle("Menghapus Data Layanan");
+                        progressDialog.setTitle("Menghapus Data com.petshopfix.Activity.Penjualan.Layanan");
                         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
                         // show it
                         progressDialog.show();
@@ -148,13 +148,13 @@ public class DetailLayanan extends AppCompatActivity {
                             public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
                                 progressDialog.dismiss();
                                 if (response.code() == 200) {
-                                    Toast.makeText(getApplicationContext(), "Data Layanan Berhasil Dihapus", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(), "Data com.petshopfix.Activity.Penjualan.Layanan Berhasil Dihapus", Toast.LENGTH_SHORT).show();
                                     Intent i = new Intent(getApplicationContext(), ListLayanan.class);
                                     i.putExtra("status", status);
                                     startActivity(i);
                                 } else {
                                     progressDialog.dismiss();
-                                    Toast.makeText(getApplicationContext(), "Data Layanan Ini Tidak Dapat Dihapus.", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(), "Data com.petshopfix.Activity.Penjualan.Layanan Ini Tidak Dapat Dihapus.", Toast.LENGTH_SHORT).show();
                                 }
                             }
 
@@ -180,7 +180,7 @@ public class DetailLayanan extends AppCompatActivity {
         btnHapusPermanen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                builder.setMessage("Anda Yakin Ingin Menghapus Layanan Secara Permanen ?");
+                builder.setMessage("Anda Yakin Ingin Menghapus com.petshopfix.Activity.Penjualan.Layanan Secara Permanen ?");
                 builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -190,7 +190,7 @@ public class DetailLayanan extends AppCompatActivity {
                         final ProgressDialog progressDialog;
                         progressDialog = new ProgressDialog(DetailLayanan.this);
                         progressDialog.setMessage("Loading....");
-                        progressDialog.setTitle("Menghapus Data Layanan Permanen");
+                        progressDialog.setTitle("Menghapus Data com.petshopfix.Activity.Penjualan.Layanan Permanen");
                         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
                         // show it
                         progressDialog.show();
@@ -199,12 +199,12 @@ public class DetailLayanan extends AppCompatActivity {
                             public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
                                 progressDialog.dismiss();
                                 if (response.code() == 200) {
-                                    Toast.makeText(getApplicationContext(), "Data Layanan Berhasil Dihapus Permanen.", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(), "Data com.petshopfix.Activity.Penjualan.Layanan Berhasil Dihapus Permanen.", Toast.LENGTH_SHORT).show();
                                     Intent i = new Intent(getApplicationContext(), ListLayanan.class);
                                     i.putExtra("status", status);
                                     startActivity(i);
                                 } else {
-                                    Toast.makeText(getApplicationContext(), "Data Layanan Ini Tidak Dapat Dihapus Permanen.", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(), "Data com.petshopfix.Activity.Penjualan.Layanan Ini Tidak Dapat Dihapus Permanen.", Toast.LENGTH_SHORT).show();
                                 }
                             }
 

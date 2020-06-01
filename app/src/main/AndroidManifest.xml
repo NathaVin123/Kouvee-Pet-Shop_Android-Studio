@@ -10,7 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activity.PenjualanProduk.MenuPenjualanProduk"></activity>
+        <activity android:name=".Activity.Penjualan.Produk.InputPenjualanProduk"></activity>
+        <activity android:name=".Activity.Penjualan.Produk.PilihCustomer" />
+        <activity android:name=".View.PenjualanProduk.CartTransaksi.CartProdukShow" />
+        <activity android:name=".View.PenjualanProduk.CartTransaksi.CartProdukAdapter" />
+        <activity android:name=".View.PenjualanProduk.TambahTransaksi.TambahProdukPenjualanShow" />
+        <activity android:name=".View.PenjualanProduk.TambahTransaksi.TambahProdukPenjualanAdapter" />
+        <activity android:name=".View.PenjualanProduk.TampilTransaksi.TampilTransaksiProdukShow" />
+        <activity android:name=".View.PenjualanProduk.TampilTransaksi.TampilTransaksiProdukAdapter" />
         <activity android:name=".Activity.PenjualanLayanan.MenuPenjualanLayanan" />
         <activity android:name=".View.PenjualanProduk.DaftarPenjualanProduk.ShowPenjualanProduk" />
         <activity android:name=".View.PenjualanProduk.DaftarPenjualanProduk.PenjualanProdukAdapter" />

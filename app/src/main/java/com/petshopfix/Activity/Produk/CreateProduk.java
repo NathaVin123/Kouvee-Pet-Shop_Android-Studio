@@ -185,7 +185,7 @@ public class CreateProduk extends AppCompatActivity {
                     Call<Response> produk = apiService.createProduk(nama_produk, harga_produk, stok, min_stok, satuan_produk, body, updateLogId);
 
                     progressDialog.setMessage("Loading....");
-                    progressDialog.setTitle("Menambahkan Data Produk.");
+                    progressDialog.setTitle("Menambahkan Data com.petshopfix.Activity.Penjualan.Produk.");
                     progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
                     // show it
                     progressDialog.show();
@@ -200,7 +200,7 @@ public class CreateProduk extends AppCompatActivity {
                                     Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_SHORT).show();
                                 else
                                 {
-                                    Toast.makeText(getApplicationContext(),"Tambah Data Produk Berhasil.", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(),"Tambah Data com.petshopfix.Activity.Penjualan.Produk Berhasil.", Toast.LENGTH_SHORT).show();
                                     Intent i = new Intent(getApplicationContext(), ListProduk.class);
                                     i.putExtra("status","getAll" );
                                     startActivity(i);

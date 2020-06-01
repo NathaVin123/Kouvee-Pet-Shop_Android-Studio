@@ -35,6 +35,6 @@ public interface ApiDetailProduk {
 
     @POST("detailProduk/delete")
     @FormUrlEncoded
-    Call<Response> batalProdukPenjualanProduk(@Field("no_transaksi") String no_transaksi,
+    Call<Response> deleteDetailPenjualanProduk(@Field("no_transaksi") String no_transaksi,
                                               @Field("id_produk") String id_produk);
 }

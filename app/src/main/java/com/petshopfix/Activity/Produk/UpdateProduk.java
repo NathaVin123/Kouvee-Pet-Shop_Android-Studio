@@ -209,7 +209,7 @@ public class UpdateProduk extends AppCompatActivity {
                             min_stok, satuan_produk, body, updateLogId);
 
                     progressDialog.setMessage("Loading....");
-                    progressDialog.setTitle("Updating Data Produk.");
+                    progressDialog.setTitle("Updating Data com.petshopfix.Activity.Penjualan.Produk.");
                     progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
                     // show it
                     progressDialog.show();
@@ -223,7 +223,7 @@ public class UpdateProduk extends AppCompatActivity {
                                 if(response.body().getStatus().equals("Error"))
                                     Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_SHORT).show();
                                 else{
-                                    Toast.makeText(getApplicationContext(),"Update Data Produk Berhasil.", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(),"Update Data com.petshopfix.Activity.Penjualan.Produk Berhasil.", Toast.LENGTH_SHORT).show();
                                     Intent i = new Intent(getApplicationContext(), ListProduk.class);
                                     i.putExtra("status","getAll" );
                                     startActivity(i);

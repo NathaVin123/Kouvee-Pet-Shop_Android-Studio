@@ -95,7 +95,7 @@ public class DetailPengadaan extends AppCompatActivity {
         cetakPdf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(detailPengadaan.getString("statusPengadaan").equals("Belum Datang"))
+                if(detailPengadaan.getString("status_po").equals("Belum Datang"))
                 {
                     updateStok(nomorPO);
                 }
@@ -115,7 +115,7 @@ public class DetailPengadaan extends AppCompatActivity {
         btnUbah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(detailPengadaan.getString("statusPengadaan").equals("Sudah Datang"))
+                if(detailPengadaan.getString("status_po").equals("Sudah Datang"))
                 {
                     Toast.makeText(DetailPengadaan.this, "Pengadaan produk dengan status sudah datang tidak dapat diubah !",Toast.LENGTH_SHORT).show();
                 }
@@ -367,7 +367,7 @@ public class DetailPengadaan extends AppCompatActivity {
         PdfPCell h1 = new PdfPCell(new Phrase("No",h));
         h1.setHorizontalAlignment(Element.ALIGN_CENTER);
         h1.setPaddingBottom(5);
-        PdfPCell h2 = new PdfPCell(new Phrase("Nama Produk",h));
+        PdfPCell h2 = new PdfPCell(new Phrase("Nama com.petshopfix.Activity.Penjualan.Produk",h));
         h2.setHorizontalAlignment(Element.ALIGN_CENTER);
         h2.setPaddingBottom(5);
         PdfPCell h3 = new PdfPCell(new Phrase("Satuan",h));

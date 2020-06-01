@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
-    tools:context=".Activity.PenjualanProduk.MenuPenjualanProduk">
+    tools:context=".Activity.Penjualan.MenuPenjualanProduk">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -151,7 +151,7 @@
         <!--                        android:layout_width="wrap_content"-->
         <!--                        android:layout_height="wrap_content"-->
         <!--                        android:layout_marginTop="10dp"-->
-        <!--                        android:text="Tampil Produk Minimal"-->
+        <!--                        android:text="Tampil com.petshopfix.Activity.Penjualan.Produk Minimal"-->
         <!--                        android:textAlignment="center"-->
         <!--                        android:textSize="23sp"-->
         <!--                        android:textStyle="bold"/>-->

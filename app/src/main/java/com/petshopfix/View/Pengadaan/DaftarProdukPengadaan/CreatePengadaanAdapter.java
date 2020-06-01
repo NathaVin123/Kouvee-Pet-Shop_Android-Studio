@@ -104,6 +104,8 @@ public class CreatePengadaanAdapter extends RecyclerView.Adapter<CreatePengadaan
         holder.btnTambah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
                 ApiDetailPengadaan apiService = ApiClient.getClient().create(ApiDetailPengadaan.class);
                 Call<com.petshopfix.API.Response> detailPengadaan = apiService.tampilPengadaan(nomorPO);
 
@@ -113,10 +115,14 @@ public class CreatePengadaanAdapter extends RecyclerView.Adapter<CreatePengadaan
                         status = "Tidak ada";
                         DetailPengadaanDAO detailPengadaan = null;
 
-                        if (!response.body().getDetailPengadaan().isEmpty() && response.code()==200)
+
+                        if (!response.body().getDetailPengadaan().isEmpty())
                         {
+                            System.out.println("Iki "+ response.body().getDetailPengadaan().get(0).getNama_produk());
+                            System.out.println("jumlah"+response.body().getDetailPengadaan().size());
                             for (DetailPengadaanDAO dtp : response.body().getDetailPengadaan())
                             {
+
                                 if (dtp.getId_produk().equals(produks.getId_produk()))
                                 {
                                     detailPengadaan = dtp;
@@ -230,12 +236,16 @@ public class CreatePengadaanAdapter extends RecyclerView.Adapter<CreatePengadaan
                 Toast.makeText(context, t.getCause().toString(), Toast.LENGTH_SHORT).show();
             }
         });
-    }
+}
 
     private void simpanDetailPengadaan(String nomorPO, String id_produk, String satuan, int jumlah_po)
     {
-        if (status.equals("Tidak Ada"))
-        {
+        /*if (status.equals("Tidak Ada"))
+        {*/
+        System.out.println("NoPO"+nomorPO);
+        System.out.println("idProduk" +id_produk);
+        System.out.println("satuan"+satuan);
+        System.out.println("jumlah"+jumlah_po);
             ApiDetailPengadaan apiService = ApiClient.getClient().create(ApiDetailPengadaan.class);
             Call<com.petshopfix.API.Response> detailPengadaan = apiService.createDetailPengadaan(nomorPO, id_produk, satuan, jumlah_po);
 
@@ -248,6 +258,8 @@ public class CreatePengadaanAdapter extends RecyclerView.Adapter<CreatePengadaan
             detailPengadaan.enqueue(new Callback<com.petshopfix.API.Response>() {
                 @Override
                 public void onResponse(Call<com.petshopfix.API.Response> call, retrofit2.Response<com.petshopfix.API.Response> response) {
+                    System.out.println(response.code());
+
                     if(response.code() == 200)
                     {
                         progressDialog.dismiss();
@@ -260,7 +272,7 @@ public class CreatePengadaanAdapter extends RecyclerView.Adapter<CreatePengadaan
                     progressDialog.dismiss();
                 }
             });
-        }
+        /*}
         else
         {
             ApiDetailPengadaan apiService = ApiClient.getClient().create(ApiDetailPengadaan.class);
@@ -275,6 +287,8 @@ public class CreatePengadaanAdapter extends RecyclerView.Adapter<CreatePengadaan
             detailPengadaan.enqueue(new Callback<com.petshopfix.API.Response>() {
                 @Override
                 public void onResponse(Call<com.petshopfix.API.Response> call, retrofit2.Response<com.petshopfix.API.Response> response) {
+                    progressDialog.dismiss();
+                    System.out.println(response.code());
                     if(response.code() == 200)
                     {
                         progressDialog.dismiss();
@@ -288,7 +302,7 @@ public class CreatePengadaanAdapter extends RecyclerView.Adapter<CreatePengadaan
                     Toast.makeText(context, t.getCause().toString(), Toast.LENGTH_SHORT).show();
                 }
             });
-        }
+        }*/
     }
 
     private void hapusDetailPengadaan(String nomorPO, String id_produk)
@@ -375,7 +389,7 @@ public class CreatePengadaanAdapter extends RecyclerView.Adapter<CreatePengadaan
         txtHarga.setText("Rp "+String.valueOf(produks.getHarga_produk() +"0"));
         txtStok.setText("Stok : "+ produks.getStok() + " / " + produks.getMin_stok());
 
-        if (status.equals("Tidak Ada"))
+       /* if (status.equals("Tidak Ada"))
         {
             txtSatuan.setText("Box");
             txtJumlah.setText("1");
@@ -384,10 +398,10 @@ public class CreatePengadaanAdapter extends RecyclerView.Adapter<CreatePengadaan
         }
         else
         {
-            txtSatuan.setText(dtp.getSatuan());
-            txtJumlah.setText(String.valueOf(dtp.getJumlah_po()));
-            txtSubtotal.setText(String.valueOf(dtp.getHarga_produk()*dtp.getJumlah_po())+"0");
-        }
+//            txtSatuan.setText(dtp.getSatuan());
+//            txtJumlah.setText(String.valueOf(dtp.getJumlah_po()));
+//            txtSubtotal.setText(String.valueOf(dtp.getHarga_produk()*dtp.getJumlah_po())+"0");
+        }*/
 
         String url = ApiClient.BASE_URL + "produk/" + produks.getId_produk() + "/gambar";
         Glide.with(context)

@@ -1,4 +1,4 @@
-package com.petshopfix.View.Pengadaan.DaftarProdukPengadaan;
+package com.petshopfix.View.PenjualanProduk.TambahTransaksi;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,7 +24,7 @@ import com.petshopfix.API.Interface.ApiProduk;
 import com.petshopfix.API.Response;
 import com.petshopfix.DAO.ProdukDAO;
 import com.petshopfix.R;
-import com.petshopfix.View.Pengadaan.DaftarProdukPengadaanTertentu.UpdatePengadaanShow;
+import com.petshopfix.View.PenjualanProduk.CartTransaksi.CartProdukShow;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,29 +32,30 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 
-public class CreatePengadaanShow extends AppCompatActivity {
+public class TambahProdukPenjualanShow extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-    private CreatePengadaanAdapter adapter;
-    private List<ProdukDAO> listProduk;
-    private String nomorPO, cek, nama_supplier;
+    private TambahProdukPenjualanAdapter adapter;
+    private List<ProdukDAO> listproduk;
+    private String no_transaksi, status, nama_customer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_pengadaan_show);
+        setContentView(R.layout.activity_tambah_produk_penjualan_show);
 
         setAdapter();
     }
 
     private void setAdapter() {
-        nama_supplier = getIntent().getStringExtra("nama_supplier");
-        nomorPO = getIntent().getStringExtra("nomorPO");
-        cek = getIntent().getStringExtra("cek");
-        listProduk = new ArrayList<ProdukDAO>();
+        no_transaksi = getIntent().getStringExtra("no_transaksi");
+        status = getIntent().getStringExtra("status");
+        nama_customer = getIntent().getStringExtra("nama_customer");
+
+        listproduk = new ArrayList<ProdukDAO>();
         recyclerView = findViewById(R.id.recycler_view);
-        adapter = new CreatePengadaanAdapter(this, listProduk, nomorPO, cek, nama_supplier);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getApplicationContext(),2);
+        adapter = new TambahProdukPenjualanAdapter(this, listproduk, no_transaksi, status, nama_customer);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(TambahProdukPenjualanShow.this,2);
         recyclerView.setLayoutManager(gridLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);
@@ -62,7 +63,7 @@ public class CreatePengadaanShow extends AppCompatActivity {
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.actionbar);
         TextView judul =(TextView)findViewById(getResources().getIdentifier("action_bar_title", "id", getPackageName()));
-        judul.setText("DAFTAR PRODUK TERSEDIA");
+        judul.setText("DAFTAR PRODUK");
 
         EditText searchView = (EditText) findViewById(R.id.txtSearch);
         searchView.addTextChangedListener(new TextWatcher() {
@@ -78,6 +79,7 @@ public class CreatePengadaanShow extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
+
             }
         });
 
@@ -102,14 +104,13 @@ public class CreatePengadaanShow extends AppCompatActivity {
                 else if(position == 4)
                     berdasarkan = "stok_rendah";
 
-                System.out.println(berdasarkan);
                 if (berdasarkan!=null)
                 {
                     ApiProduk apiService = ApiClient.getClient().create(ApiProduk.class);
                     Call<Response> produks = apiService.sortir(berdasarkan);
 
                     final ProgressDialog progressDialog;
-                    progressDialog = new ProgressDialog(CreatePengadaanShow.this);
+                    progressDialog = new ProgressDialog(TambahProdukPenjualanShow.this);
                     progressDialog.setMessage("loading....");
                     progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
                     // show it
@@ -119,10 +120,10 @@ public class CreatePengadaanShow extends AppCompatActivity {
                         @Override
                         public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
                             progressDialog.dismiss();
-                            if(!response.body().getProduk().isEmpty())
+                            if (!response.body().getProduk().isEmpty())
                             {
-                                listProduk.clear();
-                                listProduk.addAll(response.body().getProduk());
+                                listproduk.clear();
+                                listproduk.addAll(response.body().getProduk());
                                 adapter.notifyDataSetChanged();
                             }
                         }
@@ -143,14 +144,15 @@ public class CreatePengadaanShow extends AppCompatActivity {
         });
     }
 
-    private void setProduk() {
+    public void setProduk()
+    {
         ApiProduk apiService = ApiClient.getClient().create(ApiProduk.class);
         Call<Response> produks = apiService.getAll();
 
         final ProgressDialog progressDialog;
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Loading....");
-        progressDialog.setTitle("Menampilkan Daftar com.petshopfix.Activity.Penjualan.Produk");
+        progressDialog.setTitle("Menampilkan Daftar Produk");
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         // show it
         progressDialog.show();
@@ -159,9 +161,9 @@ public class CreatePengadaanShow extends AppCompatActivity {
             @Override
             public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
                 progressDialog.dismiss();
-                if(!response.body().getProduk().isEmpty())
+                if (!response.body().getProduk().isEmpty())
                 {
-                    listProduk.addAll(response.body().getProduk());
+                    listproduk.addAll(response.body().getProduk());
                     adapter.notifyDataSetChanged();
                 }
             }
@@ -176,11 +178,12 @@ public class CreatePengadaanShow extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if(cek.equals("Update Pengadaan"))
+        if (status.equals("tambah") || status.equals("detail"))
         {
-            Intent i = new Intent(getApplicationContext(), UpdatePengadaanShow.class);
-            i.putExtra("nomorPO", nomorPO);
-            i.putExtra("nama_supplier", nama_supplier);
+            Intent i = new Intent(TambahProdukPenjualanShow.this, CartProdukShow.class);
+            i.putExtra("no_transaksi", no_transaksi);
+            i.putExtra("status", status);
+            i.putExtra("nama_customer", nama_customer);
             startActivity(i);
         }
     }

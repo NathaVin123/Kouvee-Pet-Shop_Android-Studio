@@ -114,9 +114,9 @@ public class ListProduk extends AppCompatActivity  {
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("loading....");
         if(status.equals("getAll"))
-            progressDialog.setTitle("Menampilkan Daftar Produk");
+            progressDialog.setTitle("Menampilkan Daftar com.petshopfix.Activity.Penjualan.Produk");
         else
-            progressDialog.setTitle("Menampilkan Daftar Produk Dihapus");
+            progressDialog.setTitle("Menampilkan Daftar com.petshopfix.Activity.Penjualan.Produk Dihapus");
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         // show it
 

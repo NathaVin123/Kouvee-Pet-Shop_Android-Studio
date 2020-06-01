@@ -122,7 +122,7 @@ public class DetailProduk extends AppCompatActivity {
                 final ProgressDialog progressDialog;
                 progressDialog = new ProgressDialog(DetailProduk.this);
                 progressDialog.setMessage("Loading...");
-                progressDialog.setTitle("Menghapus Data Produk");
+                progressDialog.setTitle("Menghapus Data com.petshopfix.Activity.Penjualan.Produk");
                 progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
                 //Show it
 
@@ -132,7 +132,7 @@ public class DetailProduk extends AppCompatActivity {
                     public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
                         progressDialog.dismiss();
                         if(response.code() == 200){
-                            Toast.makeText(getApplicationContext(), "Data Produk Berhasil Direstore", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Data com.petshopfix.Activity.Penjualan.Produk Berhasil Direstore", Toast.LENGTH_SHORT).show();
                             Intent i = new Intent(getApplicationContext(), ListProduk.class);
                             i.putExtra("status", status );
                             startActivity(i);
@@ -150,7 +150,7 @@ public class DetailProduk extends AppCompatActivity {
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                builder.setMessage("Apakah Anda Yakin Menghapus Produk ini ?");
+                builder.setMessage("Apakah Anda Yakin Menghapus com.petshopfix.Activity.Penjualan.Produk ini ?");
                 builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -160,7 +160,7 @@ public class DetailProduk extends AppCompatActivity {
                         final ProgressDialog progressDialog;
                         progressDialog = new ProgressDialog(DetailProduk.this);
                         progressDialog.setMessage("Loading....");
-                        progressDialog.setTitle("Menghapus Data Produk");
+                        progressDialog.setTitle("Menghapus Data com.petshopfix.Activity.Penjualan.Produk");
                         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
                         //Show it
 
@@ -170,13 +170,13 @@ public class DetailProduk extends AppCompatActivity {
                             public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
                                 progressDialog.dismiss();
                                 if(response.code() == 200){
-                                    Toast.makeText(getApplicationContext(),"Data Produk Berhasil Dihapus", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(),"Data com.petshopfix.Activity.Penjualan.Produk Berhasil Dihapus", Toast.LENGTH_SHORT).show();
                                     Intent i = new Intent(getApplicationContext(), ListProduk.class);
                                     i.putExtra("status", status);
                                     startActivity(i);
                                 }else{
                                     progressDialog.dismiss();
-                                    Toast.makeText(getApplicationContext(),"Data Produk Ini Tidak Dapat Dihapus.", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(),"Data com.petshopfix.Activity.Penjualan.Produk Ini Tidak Dapat Dihapus.", Toast.LENGTH_SHORT).show();
                                 }
                             }
 
@@ -202,7 +202,7 @@ public class DetailProduk extends AppCompatActivity {
         btnDeletePermanen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                builder.setMessage("Apakah Anda Ingin Menghapus Produk Secara Permanen ?");
+                builder.setMessage("Apakah Anda Ingin Menghapus com.petshopfix.Activity.Penjualan.Produk Secara Permanen ?");
                 builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -212,7 +212,7 @@ public class DetailProduk extends AppCompatActivity {
                         final ProgressDialog progressDialog;
                         progressDialog = new ProgressDialog(DetailProduk.this);
                         progressDialog.setMessage("Loading....");
-                        progressDialog.setTitle("Menghapus Data Produk Permanen");
+                        progressDialog.setTitle("Menghapus Data com.petshopfix.Activity.Penjualan.Produk Permanen");
                         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
                         //Show it
 
@@ -222,12 +222,12 @@ public class DetailProduk extends AppCompatActivity {
                             public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
                                 progressDialog.dismiss();
                                 if(response.code() == 200){
-                                    Toast.makeText(getApplicationContext(),"Data Produk Berhasil Dihapus Permanen.", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(),"Data com.petshopfix.Activity.Penjualan.Produk Berhasil Dihapus Permanen.", Toast.LENGTH_SHORT).show();
                                     Intent i = new Intent(getApplicationContext(), ListProduk.class);
                                     i.putExtra("status", status);
                                     startActivity(i);
                                 }else{
-                                    Toast.makeText(getApplicationContext(),"Data Produk Ini Tidak Dapat Dihapus Permanen.", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(),"Data com.petshopfix.Activity.Penjualan.Produk Ini Tidak Dapat Dihapus Permanen.", Toast.LENGTH_SHORT).show();
                                 }
                             }
 

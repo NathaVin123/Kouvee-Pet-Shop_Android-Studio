@@ -17,7 +17,7 @@ public class TransaksiProdukDAO {
     private String status_pembayaran;
 
     @SerializedName("id_customer")
-    private int id_customer;
+    private String id_customer;
 
     @SerializedName("id_customerService")
     private String id_customerService;
@@ -60,7 +60,7 @@ public class TransaksiProdukDAO {
         return status_pembayaran;
     }
 
-    public int getId_customer() {
+    public String getId_customer() {
         return id_customer;
     }
 

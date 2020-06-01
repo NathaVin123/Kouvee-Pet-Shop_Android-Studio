@@ -62,7 +62,7 @@ public class CreateLayanan extends AppCompatActivity {
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.actionbar);
         TextView judul = (TextView) findViewById(getResources().getIdentifier("action_bar_title", "id", getPackageName()));
-        judul.setText("Create Layanan");
+        judul.setText("Create com.petshopfix.Activity.Penjualan.Layanan");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
@@ -146,7 +146,7 @@ public class CreateLayanan extends AppCompatActivity {
                     Call<Response> layanan = apiService.createLayanan(namaL, hargaL, id_ukuranL, updateLogIdL);
 
                     progressDialog.setMessage("Loading...");
-                    progressDialog.setTitle("Tambah Data Layanan");
+                    progressDialog.setTitle("Tambah Data com.petshopfix.Activity.Penjualan.Layanan");
                     progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
 
                     progressDialog.show();
@@ -159,7 +159,7 @@ public class CreateLayanan extends AppCompatActivity {
                                     Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_SHORT).show();
                                 else
                                 {
-                                    Toast.makeText(getApplicationContext(), "Data Layanan Berhasil Ditambahkan", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(), "Data com.petshopfix.Activity.Penjualan.Layanan Berhasil Ditambahkan", Toast.LENGTH_SHORT).show();
                                     Intent i = new Intent(getApplicationContext(), ListLayanan.class);
                                     i.putExtra("status", "getAll");
                                     startActivity(i);
